@@ -1,0 +1,1833 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>online digikala shop</title>
+        <script src="js/jquery-3.5.1.min.js"></script>
+        <style type="text/css">
+            #slider {
+            }
+        </style>
+    </head>
+    <body style="margin-top: 0; background-color: #898a87">
+
+    <style>
+        @font-face {
+            font-family: yekan;
+            src :url('fonts/Yekan.ttf') format('truetype'),
+            url('fonts/Yekan.eot?#iefix') format('embedded-opentype');
+        }
+      div,span,p,a,li{text-align: right; direction: rtl;}
+        a{text-decoration: none }
+      .yekan{font-family: yekan;}
+        .fonts{font-size:11pt ;}
+        .fontm{font-size:11.5pt ;}
+        .fontl{font-size: 12.3pt;}
+        .fontss{font-size: 9.5pt;}
+    </style>
+
+
+
+    <header style="background-color: white">
+
+
+
+        <div id="header" style="width:1200px; height: 100px;margin:auto;padding-bottom: 10px; ">
+               <div id="header-right" style="width: 720px; float: right">
+                 <div id="up-right-header" style="height: 40px;padding: 20px;">
+                    <span style="height: 24px;width: 24px; background:url(images/lock.png); display: block;float: right;">
+                    </span>
+                      <a class="yekan fonts" href="/login" style="float: right; margin-right: 10px;" >
+                       فروشگاه اینترنتی,وارد شوید
+                      </a>
+                     <span style="height: 24px;width: 24px; background:url(images/login.png); display: block;float: right;margin-right: 10px;"> </span>
+                     <a class="yekan fonts" href="/register" style="float: right ; margin-right: 10px;">
+                        ثبت نام کنید
+                     </a>
+
+                 </div>
+
+                   <div id="down-right-header" style="height: 50px ; margin-top: -20px;margin-right: 20px;">
+                       <div id="basket-top" style="height: 40px; width: 190px;float: right;">
+
+                           <div id="bakset-top-right" style="width: 50px;height: 100%;background:green url(images/shoping.png)no-repeat center;float: right "></div>
+                           <div id="beside-basket-bar"  style="height: 40px; width: 92px; float:right;background: darkgreen;padding: 0px 20px;line-height:32px ">
+                               <span class="yekan fonts" style="color: white;">سبد خرید </span>
+                               <span class="yekan fonts" style="width: 25px;height: 25px; border-radius: 100%  ;text-align: center;background: darkseagreen;display:block;float:left;margin-top: 7px ;line-height: 25px ">0</span>
+
+                            </div>
+
+
+
+                       </div>
+
+
+                       <div id="search-bar" style="width: 500px; height: 40px;float: right;float: right; position: relative;" >
+                           <input class="yekan fonts" style="width: 480px; height: 36px;border: solid lightgrey 1px;padding-right:10px; "placeholder="محصول , دسته یا برند مورد نظر خود را سرچ کنید."/>
+                            <span id="search-icon" style="width: 42px; height: 100%; display:block; background:url(images/lope.png)no-repeat center lightgrey ; position: absolute;top: 0px;left: 7px;"></span>
+                       </div>
+
+
+
+                </div>
+
+
+
+            </div>
+
+        <div id="header-left" style="float: left;margin-top: -10px;">
+        <img src="images/diggi.png ">
+
+        </div>
+      </div>
+    </header>
+    <style>
+
+        nav{box-shadow: 1px 3px 4px black; border-top: 1px solid #809d80;
+            -webkit-box-shadow: 1px 3px 4px black;
+            -moz-box-shadow:1px 3px 4px black; }
+        li{list-style: none}
+        ul{margin: 0;height: 40px;line-height: 40px}
+        #main-menue>ul>li{float: right;}
+        #main-menue>ul>li{padding: 0px 10px;height: 40px;}
+        #main-menue{height:40px;}
+        #main-menue>ul>li>a{line-height:35px;display: block;}
+        .down-arrow{height: 7px;width: 7px; display: inline-block;background:rgba(0,0,0,0) repeat scroll 0 0 url('images/da.png');}
+        #main-menue>ul>li>ul>li{float: right;}
+        #main-menue>ul>li>ul>li>a{padding: 0px 10px; }
+        #main-menue>ul>li>ul{position:absolute;right:0;box-shadow:1px 3px 4px rgba(0,0,0,0.4);;padding:0px;background-color: whitesmoke;margin-top: 0px;width: 1000px;display: none;}
+        #main-menue>ul{position: relative;padding: 0px;}
+        .third-lvl-col{width: 249px; height: 300px;float: right;border-left: 1px solid #809d80;}
+        .third-lvl-col-ul li{line-height: 13px;padding: 1pt 15px; ;font-size: 9pt }
+        .third-lvl-col-ul li:first-child {padding: 0 5px;font-size: medium;color: #26779d;line-height: 30px;}
+        .submenue3{display: none;}
+        .activemenue{background: snow ; box-shadow: 0 -1px 3px #6e6f6c; }
+        .activemenue > a{color:#9d2b35}
+        #main-menue a{cursor:pointer;}
+       #tv-sail li a{position: relative ;display: block ;width: 250px;height: 188px;}
+        #tv-sail li a::before{
+            content: "";
+            width: 250px;
+            height: 188px;
+            display: inline-block;
+            background: rgba(0,0,0,0.4);
+            position: absolute;
+            top: 10px;
+            border-radius: 4px;
+        }
+        #tv-sail li a img{margin: 10px 0;border-radius: 4px;padding: 0;}
+        #tv-sail li:hover .circle{background: rgba(242, 241, 239, 0.5) !important;}
+        #tv-sail li .circle{transition: all 0.6s ease;}
+        .circle{height: 80px;width: 80px;border-radius: 50%;background: rgba(242, 241, 239, 0.2);display: block;position: absolute;top: 65px;left:90px;text-align: center;}
+        #tv-sail{height: 410px}
+        #side2 li a img{border-radius: 4px;padding: 0;}
+        #side2 li{overflow: hidden;border-radius: 4px;height: 195px;width: 255px;box-shadow: rgba(0,0,0,0.3);margin-top: 15px}
+        #sidenew{width: 265px;;background: whitesmoke;position: absolute;
+            top: 1150px;height:300px;margin-top: 0px;border: 1px solid dimgrey;box-shadow:1px 3px 4px rgba(0,0,0,0.4);}
+        #sidenew h3{background: lightgrey;
+            margin-top: 0px;
+            height: 40px;
+
+            line-height: 30px;
+            padding-right: 10px;}
+        #sidenew ul li a{ padding-right: 10px;display: block;float: right}
+      .sidenewleft{float: right ;margin-right: 20px;}
+        .sidenewright{float: right;border-radius: 50%}
+        #sidenew ul li a p{margin: 0}
+        #sidenew ul li a img{border-radius: 50% ;background: dimgrey;}
+        #brands a img{border-radius: 4px;box-shadow:1px 3px 4px rgba(0,0,0,0.4);}
+        #brands a{display: block;height: 100px;width: 130px;float: right;margin-bottom: 10px;margin-left: 5px;background: white;box-shadow:1px 3px 4px rgba(0,0,0,0.4);border-radius: 4px;overflow: hidden}
+    </style>
+                        <nav class="yekan fontm" style="width: 100%; height:40px;margin-top: 0;background:#cbcbcb;">
+                            <div id="main-menue" style="width: 1193px;height: 40px;z-index: 9;position: absolute;">
+                                <ul>
+                                    <li data-time="1" >
+                                         <a style="display: block;">
+                                    کالای دیجیتال
+                                           <span class="down-arrow" ></span>
+                                        </a>                                                                                                                                                                                                            </a>
+                                    <ul>
+                                                            <li data-time="3">
+                                                             <a class="fonts">
+
+
+                                                                موبایل
+                                                            </a>
+                                                            <div class="third-lvl-col, submenue3" style="width: 1000px;height:300px;background-color: white;position: absolute; right: 0 ;">
+                                                                <div class="third-lvl-col">
+                                                                    <ul class="third-lvl-col-ul yekan fontss"style="padding: 0">
+                                                                        <li>گوشی موبایل</li>
+                                                                        <li>Apple</li>
+                                                                        <li>LG</li>
+                                                                        <li>Samsunge</li>
+                                                                        <img src="images/mobile.png " width="350" height="221" style="position: absolute;left: 2px; bottom: 2px">
+
+
+                                                                    </ul>
+                                                                </div>
+                                                                <div class="third-lvl-col"></div>
+                                                                <div class="third-lvl-col"></div>
+                                                                <div class="third-lvl-col"></div>
+                                                            </div>
+                                                            </li>
+
+
+
+
+                                                            <li data-time="4">
+
+
+                                                                <a class="fonts" style="height: 100%;">
+
+                                                                    تبلت و کتابخوان
+
+                                                                </a>
+                                                                <div class="third-lvl-col, submenue3" style="width: 1000px;height:300px;background-color: white;position: absolute; right: 0 ;">
+                                                                    <div class="third-lvl-col">
+                                                                        <ul class="third-lvl-col-ul yekan fontss"style="padding: 0">
+                                                                            <li>تبلت</li>
+                                                                            <li>Apple</li>
+                                                                            <li>LG</li>
+                                                                            <li>Samsunge</li>
+                                                                            <img src="images/tablet.png" width="350" height="210" style="position: absolute;left: 2px; bottom: 2px">
+
+
+                                                                        </ul>
+                                                                    </div>
+                                                                    <div class="third-lvl-col"></div>
+                                                                    <div class="third-lvl-col"></div>
+                                                                    <div class="third-lvl-col"></div>
+                                                                </div>
+
+
+                                                            </li>
+
+
+
+                                                            <li data-time="5">
+                                                                <a class="fonts">
+
+
+
+                                                                    لپتاپ
+
+
+
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                            </li>
+
+
+                                            <li data-time="2">
+
+
+                                                <a style="display: block;">
+
+
+
+
+                                                    لوازم خانگی
+
+
+
+                                                    <span class="down-arrow" ></span>
+                                                </a>
+
+
+
+
+                                                <ul>
+                                                    <li data-time="6">
+                                                        <a class="fonts">
+
+
+                                                            صوتی و تصویری
+
+                                                        </a>
+
+                                                        <div class="third-lvl-col, submenue3" style="width: 1000px;height:300px;background-color: white;position: absolute; right: 0 ;">
+                                                            <div class="third-lvl-col">
+                                                                <ul class="third-lvl-col-ul yekan fontss"style="padding: 0">
+                                                                    <li>تلوزیون</li>
+                                                                    <li>کوچکتر از 32 اینچ</li>
+                                                                    <li>بین 32 تا 42 اینچ</li>
+                                                                    <img src="images/tv.png" width="350" height="205" style="position: absolute;left: 2px; bottom: 2px">
+
+
+                                                                </ul>
+                                                            </div>
+                                                            <div class="third-lvl-col"></div>
+                                                            <div class="third-lvl-col"></div>
+                                                            <div class="third-lvl-col"></div>
+                                                        </div>
+                                                     </li>
+
+                                                   <li data-time="7">
+                                                 <a class="fonts">
+                                                    اشپزخانه
+                                                    </a>
+
+                                                  </li>
+
+
+                                            </ul>
+                                    </li>
+        </ul>
+
+        </div>
+    </nav>
+                          <div id="main" style="width: 1165px;height:600px; margin: auto;padding: 0">
+         <div id="banertop" style="width: 100%;height: 130px;margin: auto;margin-top: 10px;">
+           <img style="box-shadow: 2px 4px 5px white;border-radius: 4px;display: block" src="images/banner.jpg">
+
+        </div>
+
+        <div id="sideright" style="width: 300px;float: right;margin-top: 20px;position: relative">
+
+            <img src="images/chib.png" style=" box-shadow:1px 3px 4px rgba(0,0,0,0.5);border-radius: 4px" >
+
+            <ul id="tv-sail" style="padding: 0;">
+                <li >
+                    <a >
+                        <img src="images/side1.jpg" style=" box-shadow:1px 3px 4px rgba(0,0,0,0.5);">
+                        <span class="circle" ><img src="images/play-button.png"style="margin-top: 25px;margin-left: 10px"></span>
+                    </a>
+                </li>
+                <li style="margin-top: 20px" >
+                    <a >
+                        <img src="images/side2mobile.jpg" style=" box-shadow:1px 3px 4px rgba(0,0,0,0.5);">
+                        <span class="circle" ><img src="images/play-button.png"style="margin-top: 25px;margin-left: 10px"></span>
+                    </a>
+                </li>
+
+
+            </ul>
+
+
+          <ul id="side2" style="padding: 0;">
+            <li  >
+                <a>
+                    <img src="images/side4.jpg" style=" box-shadow:1px 3px 4px rgba(0,0,0,0.5);">
+
+                </a>
+            </li>
+            <li  >
+                <a>
+                    <img src="images/taj.jpg" style=" box-shadow:1px 3px 4px rgba(0,0,0,0.5);">
+
+                </a>
+            </li>
+                <li  >
+                    <a>
+                        <img src="images/side3mobile.jpg" style=" box-shadow:1px 3px 4px rgba(0,0,0,0.5);">
+
+                    </a>
+                </li>
+            </ul>
+
+            <div id="sidenew">
+                <h3 class="yekan fontm" style="background: lightgrey;">تازه ترین خبرها</h3>
+                <ul style="padding: 0;position: relative">
+                    <li>
+                        <a>
+                        <div class="sidenewright"><img  src="" width="70px" height="70px" ></div>
+                        <div class="sidenewleft "  >
+                            <p class="yekan fonts" style="line-height: 60px">کارت حافظهی 256 معرفی شد</p>
+                            <p class="fontss yekan" style="line-height: 0"> پنج شنبه 25 تیر 95</p>
+
+
+                        </div>
+                       </a>
+                    </li>
+
+                    <li>
+                        <a>
+                        <div class="sidenewright" style="position: absolute;right: 10px;top: 90px">
+                            <img  src="" width="70px" height="70px" ></div>
+                        <div class="sidenewleft" style="position: absolute;top: 80px;right: 75px ;height: 35px;padding-top: 30px" >
+                            <p class="yekan fonts" style="line-height: 15px">ایفون 7 در امریکا رونمایی خواهد شد</p>
+                            <p class="fontss yekan" style="line-height: 10px"> پنج شنبه 25 تیر 95</p>
+
+
+                        </div>
+
+                    </a>
+                    </li>
+
+                </ul>
+            </div>
+            <div id="brands" style="margin-top: 10px;position:absolute;top: 1460px;width: 300px">
+
+                <a>
+                <img src="images/b1.jpg">
+                </a>
+
+                <a>
+                <img src="images/b2.png">
+                </a> <a>
+                <img src="images/b3.png">
+                </a> <a>
+                <img src="images/b4.png">
+                </a> <a>
+                <img src="images/b5.jpg">
+                </a> <a>
+                <img src="images/b6.jpg">
+                </a>
+            </div>
+
+                <style>
+                    #slider{
+                   
+                        width: 890px;
+                        height: 455px;
+                        float: right;
+
+                        position: absolute;
+                        right: 372px;
+                        top: 313px;
+                        border-radius: 4px;
+                        box-shadow:1px 3px 4px rgba(0,0,0,0.5);
+
+                    }
+                    #slidernav{
+                        width: 100%;
+                        height: 50px;
+                        background:rgba(203,203,203,0.6);
+                        z-index: 9;
+                        position: relative;
+                        border-radius: 4px;
+
+                    }
+                    #sliderimg{
+                        width: 100%;
+                        height: 405px;
+                        overflow: hidden;
+                    }
+                    #sliderimg img{
+                        width: 100%;
+                        height: 405px;
+
+                    }
+                    #sliderimg a{display: none;}
+                    #slidernav ul li{
+                        width: 175px;
+                        height: 50px;
+                    float: right}
+                    #slidernav ul li a{display: block;height: 100%;width: 100%;text-align: center;color: black;cursor: pointer;
+                    }
+                    #slider #slidernav .active > a{
+                        position: relative;
+                        border-radius: 4px;
+                        background: white;
+                    }
+                    #slider #slidernav .active > a::after{
+                        content: "  ";
+                        width: 0;
+                        height: 0;
+                        border-style: solid;
+                        border-width: 0 12.5px 13px 12.5px;
+                        border-color: transparent transparent #ffffff transparent;
+                        position: absolute;
+                        top: -13px;
+
+                        right: 0;
+                        left: 0;
+                        margin: 0 auto;
+
+                    }
+
+                </style>
+        </div>
+        <div id="content" style="width: 900px;float: left;margin-top: 15px;">
+
+            <div id="slider">
+                <span id="next" style="display: block;width: 32px;height: 32px;position: absolute;background: url('images/right-arrow-angle.png');top: 190px;right: 5px;
+cursor: pointer;z-index: 2;"></span>
+                <span id="prev" style="display: block;width: 32px;height: 32px;position: absolute;background: url('images/left-arrow.png');top: 190px;right: 840px;cursor: pointer;z-index: 2;"></span>
+                <div id="sliderimg">
+
+                    <a class="item"><img src="images/slider1.jpg"style="border-radius:                4px"></a>
+                    <a class="item"><img src="images/slider2.jpg"style="border-radius:                 4px"></a>
+                    <a class="item"><img src="images/slider3.jpg"style="border-radius:                 4px"></a>
+                    <a class="item"><img src="images/slider4.jpg"style="border-radius:                 4px"></a>
+                    <a class="item"><img src="images/slider5.jpg"style="border-radius:                 4px"></a>
+
+
+                </div>
+                <div id="slidernav">
+                    <ul style="height: 100%;padding: 0;text-align: center">
+                        <li>
+                            <a  class="yekan fontm">محصولات سلامت </a>
+                        </li>
+                        <li>
+                            <a  class="yekan fonts">برای شکمو ها </a>
+                        </li>
+                        <li>
+                            <a  class="yekan fonts"> تخفیفها </a>
+                        </li>
+                        <li>
+                            <a class="yekan fonts">مسابقه انباکسینگ </a>
+                        </li>
+                        <li>
+                            <a class="yekan fonts">سری هوشمند TCL </a>
+                        </li>
+
+                    </ul>
+
+
+
+                </div>
+            </div>
+
+
+
+            <style>
+    #servicinfo{
+        height: 45px;
+        width: 890px;
+        box-shadow:1px 3px 4px rgba(0,0,0,0.4);
+        border-radius: 4px;
+        position: absolute;
+        top: 780px;
+        right: 370px;
+        background: whitesmoke;
+
+
+    }
+    #servicinfo li{width: 175px;float: right;height: 45px;border-radius: 4px;}
+    #servicinfo ul{
+        height: 45px;
+        width: 875px;
+        padding: 0px;
+
+
+
+
+
+    }
+    #servicinfo ul li a {
+        position: relative;
+        display: block;
+        height: 45px;
+        width: 175px;
+
+    }
+    #servicinfo ul li a img{display: inline-block;
+        position: absolute;
+        width: 25px;
+        top: 10px;
+        right: 15px;
+        height: 25px;
+    }
+
+    #servicinfo ul li a div{height: 25px;
+        width: 115px;
+        position: absolute;
+        top: 10px;
+        line-height: 20px;
+        right: 50px;}
+
+</style>
+
+
+            <div id="servicinfo">
+
+                <ul>
+                    <li>
+                        <a class="fontm yekan"><div>تحویل اکسپرس</div><img src="data:image/png;base64,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" > </a>
+                    </li>
+                    <li>
+                        <a class="fontm yekan"><div>پشتیبانی 24 ساعته</div><img src="data:image/png;base64,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"> </a>
+                    </li>
+                    <li><a class="fontm yekan"><div>پرداخت در محل</div> <img src="data:image/png;base64,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"></a></li>
+                    <li><a class="fontm yekan"><div>7 روز ضمانت بازگشت</div><img src="data:image/png;base64,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"></a></li>
+                    <li><a class="fontm yekan"><div>ضمانت اصل بودن کالا</div><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGUAAAB4CAYAAADrNDyKAAAYmElEQVR4nO1deXgcxZXv3ITky5J8yS5ZsgSyG44EEoghH2xMdtSvJU+/1sjS1KuR5EOMJGCBmMMBHAMGhDmMCR8mmCz3mhiH0+CNiTnMIQzWDAHC5djSjOM42CbGGHk00ug+av/olhh118z0HNIIwfu+9/EZTV3v1/VevVevqhTlY04+n+9gzWCzQGdXguFv1IyqY4vdp08szZrl/zYgWwdII4AU0wwa1pDigNQDyF8Anf+g2H38RJGmswZA6gbkvYAknMwGTbDYL4vd12lPM8466wuAfC0gxeRgODiuIT0yY8ZZXyh236cllRh8BiBFASnF7EjJ3YC0p8TgM4o9hmlFmkHnWbZjWCL0YUAaAKR3AWlEM6g/BTgjmkHnFXssU4o0g/yqTr8GpCdUZA9rOq0Ag84F5F7A6qNmzJgxTsX4fL6DVeRBDfkWQOqQCVpD6gdkm1T0f1dRRo0//RGQx1MA0wlIW1XkQV3XvzS+h02fLS1n3weDLgKDbgKDbgJkD4FOj6s6XaghP37ypDXBpJbznwJSFHSpYBOAtB/MVdOIJfw91v8fzGg7dLpX1ibodFkGNRe3Zth+FemDUdBVpB6r7XF91ZC6QacuzaDt4PWfPNkyLChpyI83v2ap2smVhwEpruqkp2u7tJyhBWoqdZYr95X42A8nS4YFJ0B6u5CAWF9ss1rOD3PTvlrOD1MNei6NOsvto9Dp7YmW3YQQGFRjVwM5s0FdoNN7uRpqVWcLAGm3pbYKAUwnGFRTaJlNOAHSm/KvnV2iGvxyQHYPILWAwd8DpCEwdXncUjmdgDQAOg0A8k0lXl5RiD6VGLwCkN4BpF7NXCp3WG0lwPz3CCDFNeSbwaB7VaQlgLTc+pttHHxLIfo0aaTp1adIvsoEGHRuyjI+frimsxNVnasa8uN1fe7XJrKPajk/TPPxmaXITvIYVcdpPn54qt+aq0RKOGZvOT91IvtYUNKQr7ZCHcmgdBS7X/mQhnTAYVuQRYrdL1ekafyfJMZ9CJDdWOy+5UOA/BZA6rMtPIY1jf9TsfuWkUCnRWBQl63z/WU+fmSx+5YPlfn4keBcXvdoyBcXu29pqamp6bOA1C4x8BuL3bdCkKqzDRItEOOcf67YfUtJYNB9DoOIFC8tD2Cx+1YIKi0PjDqkyePrVZH9vth9k5IVNHSERdQCLh09Hs/nNS+fqaI/qCI1aUi3A9ITgPQaIO0Gg7o0g6/0eIIHjSuH/FBA/iwg7dUMWuHR/d/JtQ8a0utSvwXp/vxHWCAqraj5V0C+VrI6EYDUp+rMl0/9Hm/lEVBOczWk21UzOOnG2Ry39AbkN477UHS6Ndf+qDrzyfwWFakTkK33ID80n/HmRZZP8T+jBk8inG5Auj6Xuj0ez+fBYPOsWZDt/om4u3LurjhveCLOG1bFqKHJa/Au22/25jN2MGgpSKIVY9sGBrtTneX/ST5tZEUaUr2lLjpTb8dSHyA9n0v9KvqDmkHbswVilBf5asR7VC86eMMYn++rGfebuvLA8521Z30zPzmwzRL7OcqDoFMXIMVV5MF82klJPp/vYNDZ1aBTl4pcpqY+Yp26wKDHT+X8y9m0ATqrhBShmWT2WoJfVlEr7qqcKx6pmic2+utE2H+62GUDY5SjFBTLK+YIZnBxbUWtiFJQdPCGWJwa7z9Q3XhczjJBvtZUW2n7HAOkhIp0jc/nOziXthxkxYviWsZgHhsEpIFskxVKkZ0EOjWnq7vKEuZGf514P4Xg8+D2ODXcdoA3zMxFPqpOF4IZu8sUDe8BnbpKjDzjeIBUnmaKJquqAUD2UJlRndVXBwabZ3c0k/lSX40I+08X7YUFQcox3rCrI9C4PMaDJ2Qrp1LkJ1iLnX5TFmnlNaIZ3Mi2jY+EhrQvVeUaUreKdEDT6QaPt+aIbOr1VFYeoiJdA/IFgri8olY8XTV/woFIwbEYbwjmIq8yHz9SRbYMzMVJXxpghnKpXykpr/4xyPdDegFZWEPGcqlXM6qOtcL2js4u9NWIx6vmi/3FASOZhzoCjcv31Z7xLzkJT1EUDRkDpBaQLJ9Nu8vmZV0p6HSRRLXsLtUDP8u1ox7d/51UvsZvZs+ZFDWVDcep8f4Yazwx1/EqiqJoXj4zhYpenn1lBlvpVFlsda6dK/HyowH5enudc4yAeLByXtEBSMMvxHlj7jZAURRAdosElOwjAGDuuNlXWA/l0ilPZeUhgHS3vb7zfNVio7+u2EJ3w125Lp1NWbL7JaDckUNFdJtEH/4pl05pyJfZO3VOeXVKv2Iqcow3vNjBGk7Kbfxs8ziNY/BhQJ59nrO1P21fDr+fdYfMQGWffYa8xk4vuqCzZmp4+ACvS7ltnIrA5uOpSJ2gs8ps61HAy34kW9Zls3dQiuwkMJPqxsobBhdvTVFAEktvEkPRHWL4g/2iv3mz6Kg5wzljAg23btfP+1Lm0Ztk7TE5lsTgZT/KGhSPJ3gQ2L1UnboAq49yX56vtQPySNXUNOqJK5YJMTQskqn392vlvw/UX+xWjoBVR0lci+Fsw1BjJAnHD4GXne6qMzon+xdyV+XcogtfxvHgAjH8wX7hoIGBVGV2tPMGV5ksqs5VcHr5sZwAURRFAaS/2yrrdBMisPZYXkgue5GvRuyeooZ94NU3nIAIIYb37ktZJsbrV7qRYWl5AFXnx521bR4jFanVtiTuduPJa8gvsc+SPxQvbJKWe+5aLQVECCG6V9yRrmx7nDd6M8uCMc1MIk+Wx46cQQGkvfZVg4Y0O12ZMqP6OED+VnK5qypqxYEpAICdE8tuEcP7PpAC0v/UcxnLx3lDRmdaQ5oNOn1ok+MHOQEyaxb/hmTVkPD42DHpyqnIFtvLTcXVVueCxWLwjXekgAy+vVV0XnCZq3piFPSkk0eZjx1jXxKbi545X88aFNDZleDcwBlRFOUzacshDyeXubqitugAyLjvjxvlduTDdtG9/FbX9cSoPlO45DOSj7sXdH5lVoCUlc3/ijQRQqfH05XTdHai3eEsYgg+JffctVqIoSEpKL1rHs2qrhivfzdWEzwiw4e61uFeIMXKyuZ/xTUogHwdGPSerZK45uNpd+cA2fnJZeaXB8S7U2zFlWhaLoZ27ZHbkRdeFvF5Z2ddZ5wa6tLKxaDTJL5Ku6rzDS4BYeeDPMsx40EZMOjR5DLXTzHVFT9zoRgIvy4FZKhtu+hadHWudd/jQq5vSWSaAGQXpC2oGUwDc7/ZXrivVOf/lb7RqqMA6f3kcuummOrqe+wJKSAjXQnRfcud+dS9vdt/1rfTyUfFwM9Bni41AN4UB5Cs8LoMkISbjHm7B+9Fmogkh5y5e+XdYqS7RwpK36N/yLv+A1RfnlFGSNfLVmKAtK+srOqfnQUMWiNZbQ1qBj2XqTFFGTvCNlZ2ga+66ECMctel14ih7TukgAy0vCrijRfk306g0VU8DJA22j9+K4lvfJ4cGFSTIu00MdMwXK2n7XsmV00RexKv+4Xof7FFbkd27hKJK5YVpi2q/7UbOVn+326nVuLxcem2dltgoTfsNvho1sFWJZdfMXtO0QHp4A2i94HHpICIgQHRc8eqwoHvwrsf+4C9fKZkiSwAqV1RFGvvXLdt7OvUperscreNWMA+lVzHfVNg3737pt+K4QMxuR1Z/3SB26vP6gyOhmyhxL7E1HJepag6OxPMWx+S/7gnmwbMRsYHL9cXeeXVtXCJGPxLqxSQwdffEp3nXlKwtp7314l5RqAXkIc1g2lZfMh7bXLv1JAtHAXF7pfszhYUewMvFTMhovoM0f9MsxSQ4b3vi8S1NxesrXepXpxdXp0su6eykNk/pKCUePnR9rwkcw+ZFn1cQeld9YDcjgghelc9UNC2XmOn2+2Cq2MWgPwCcHr5pvqyBGpXX+ZyOIssSLBlzBdr/yRx3c1ieO8+KSD9z7wgOqqd++758LP+Orvc3swkq1I98LMUhv6jHUkVWS04M1eGAWm3p7LyEFeg6PzpYhv6znMXicE/vyW3I1taRefCJQVv85GqebagLX86nZxmGsbXQWe7HEtig7oclz9oSI+AbS/ZcmpcrSpAp/uyXRLH558jElcsE12XXFUQAfU/9bxcZw0Ni67FSyfkQ7hz9lwbKHRfWjkhPWmfAKac+SbHjz2VlYekCNd3gYtjcppBNySXy+Q8dl12rRiJdXwkt+gO0Xn2RTkLp/vGlantyOqHJ2x23lAxx+7f3ZAGkOs1+aGr/dIwiylYpmny+7H6VPT/PB0o1uEZ12GWoagz7DES6xCJpuXZq62zLxIjiW652npzy4QB0sEbxMW2o3uqThdKZVtOHpAHJEdUnatpv3hAdgHIg2ZvpC3npZrk32cKSA5/eCClqum5d417wdScIQZbo9KqRmIdIn7mwgkDpJ03CMPgdptCcrnSGw47gpQA5OlD9x9VwNeD88BQPN0xCND5D+wJAulC9wMtf0qpboQQZobinP/OKJhU4XghhEgsvWlCZ8lTVfPtqv5D2SXVYNBpErXVDkhPugJEUVJuBw8D8rUZwFyXXCbdJle84XwxtHNXWmCG/rpTdJ67KGUdiaU3ObIaR6lv3YYJBaSDN4ibZ8+xaRO+TiYXcxHlvNUpq+1gRVEU0OkKcB5/S5s4Ach/mfz7TNvBnb/4leh/8rn0wOz4u+i+9S5H2a5FV4uhyF+lZQbCr0+o2urgDWIfrxdnjvfkRapMenD6JP0q0lVZAaIoKVKMDOoqS5NiBN7qk8GWFJ4xcaL6DNH7u4fF8IftKYEZiXeaeb2WOovPO0f0v/CyHMRde3JaLGTLLzqdxj7wVjtuYtV8/HDZSa5Zs/g3sgZFUZwhfTfJeGDz7N2mGHUtXpra+I/OgJfCIj7/HNG76sGUv8mQ1VgwXuFQXXJP3rQnDlMQzwkQRUmRtmqQP0OZJfavwm0yXvzMhWLwna1pgRnatSelHenf2DwpgLSxoCizjVFFWiIHhc2TrGajOYMC9iimTl0l5SztNVHqLP9PAGlrcrmmLHYh440XiL7H/yhG+vvTgmOnwTffEZ0LFk8KKMtsDqOK1Kr6qqV3sWjIGBjjV6WA9LecQZFkiw9ldHQURQGkS+2z5YksA5Q9d/5ODO/5hytAhvftF4llt0wKIBv9dQJxvG+ipZgliqIoYPhLwLk1kttRiFM5/zLIgmZYlfHQkObjhwPyTcllF/lqxN4ss1sS190sBt/ckhGU3t89NCmAHOAN4oqKWrtvEtIM9r1UslD1yn8HSUJK1sthRRk7XmdfW4umpqbPuis/3sMHJLEmh8hx54WXi/5nX0wJSP+zm0RH7VmTAso6u7OIJFT0BzOI4jNg3nc8ztBns0P5kVB1Vim5sWif2/Lmqw70WHL5SoPnnKDXu/phh4Ef/mC/iAcXTAogG6rmi4ARGK+2DL5hpovseYdtRupQvdZmVlagmI6g3XnM6sh2qoOoW1kwJ8Ek5wEPtkZF54WXTwogUQoKZo9xIQ1qXvK4kqVOIVvZAQ3ZwhxAKczlBlZu8rh9moW+mil5ZkXG21hQ/MoWCTaNO7vEtQzMREd7HbdlK0sFkO5w6E+D7sq6IkVRNPMxm3F1LfBVT6m0Vhm/T/XiUikgdHtWstTZnQ5QMmyGySsy6DqQHNnO5cIcj8/3TfvOJKB5OPXFKXoNSIu/TiyWAAJI92dzeae1H7/Dqb6465k2RpYnKnvppxuQXsr2ainrgZtn7PUFywPisSmWnb++ar4k2EgCkDaWlFf92N14GVORXrTiXo6Pu6S82lU9TmDk51Qs5nEw6EPQ6Tq3V6Z7fOyYVJd2TpUz9qsr5zlCKOZKi7ZnOu9Z5uNHgk7XgZkdlO7tmP05AaIoiqIZ3ADnGtvOfWA+WPZQKfKMV/2VIj9BRbZaVtdiX43YUKRZ83TVfLHE7hiO+SJsdbqxmdcVsodMOchv+xtjg3oAKeOxibRUYvAKawpmeNuKDQLSYKo96mQ6Teffsq71c9RZiiSWVtSK5kmyNZv8deLailrhlY+rX0W27DSdfyvVWKyc4CHJJpajLjAKcLHnKJmOIFsG1ituGRqPA/K1bq57teyW9G7jMiRxbUWteCdHnyYTv8VOF9dW1EpVlcW96a4UtJzjR1LY3XH2A5C6VWTLCnYFrp1UpHrr/F7CvLdK2pkEuMwXMx3M8ce87VxrBMSK2XPES/66nK80bOcN4iV/nVgxe46otXnmEhXzcimytHd7gc6fTnVTrCWXbkB6W0OqL4zkXVCJwWeATvdaHZFN3U5NZ9e6rQ90Vunm5u4Kg4slFbXittlzxZrKeWJ91XzR4q8TbSwoohQUbSwoWvx1Yn3VfLGmcp64bfZcsaSiVlQ4PXKnMJFa3dzDBTq7GtJdq67TvalC+ZNCHuSHqgbfkOIm655sHiA4TeffMiMA6WdO4ZmHAdn56WzHKFmXZztvUEVKqAbfUNQHCOxkragk+WL8rWzr8niCB6k6XWjd7J3JgObKg6BTs6qzBfanPdIRGPzPUkBcLHCKQoB0P9gNt0GxfB61KfHyo83359k9gHxbnjNiGyC7R0OqL/Hyo7Pti+Ui2A17v4b0QK7jm3DinH8O5A6n64M06SjjozZmW7utfz9hvrlCTSr6g5qXz/R4PJ/Pp32wHSG0OOZ2j6loBDotkujcj/1DaZrBvgcOv4r1AdKlxe5bRkrxpGCfajBXN8lNVQLzYoJxH9vH5klBRVEU0GmNBJjc702cAiRVyzo9WOx+uSbVoP8E5xI54zO1pchPsJKhJ/yZWl2f+zUN+fGqzlVNZyeme6ZWRXa2JLMnoenVp0xkHwtOYD6c7Fg6akjXqEhLLCP8orWaGQEzCtABOnUAUod1TiYBSG8WKl6kIc0G8xqOfotjFrdb4ZAha6HQAki/VQ1+uWUjnUFZnf5SiD5NKhX06XNTcLtVnS3IpS8qsrMB6V0rKS7Ti0BuOPGxfPpcURQFdHq7QEIY9TPiqkHPqeX8MDftq+X8MNXcWEuzL5QLs20TLbsJoxIf+yGkf3EnF+4HpFhphvRZy9FrBz37Jwkz8ICG/PjJkuGEEHj9J4MZfkmA8ybr/qS/CTDV3T/G9Hua97rAoB7Q6TJZm6rBLtfk8alR7gUzfNMNSHusdkftWhzke0fdgPQ3tZz/dLJlOGGkIT8ekP0SkP4PkD2kGXwlGHRuiZdhaTn7vqKM94pP5fzLKvIgILWlAacDkJ6YNcv/bUUZuzl8fSp1ZQLFI5rOGux7GzNmzPgCYPVRgNwLBp0LSL9VkT0MZsTgtkynDT5xpOl0HqTclua95t/4TkAaSTNDRlwf+pzOxF/deigPRZ7loUiMhyIr/a9sz/kh5RKDz7BUTbY2YgCQdpQYfEZBxhSKLOChyHYeiqyrbtmW8+tDRSMeit7IQxExyoGWSM4PKSuK9aYw0pOAXHaXjIzbVZ2eyTcQOTaeV6KlPBTt+Wg8bWsKUe+kEg9H9ieDwkORvB5SHiXLNo1A6uX2MCCNqAa5fufEDVFL2xLbeAYLWf+kEA9Fm8cNIhxdVai6Qec/0MyIQM/oE7rWf3sA+SbZefZ8iVpam2ygiEK3MeFUE249gsLR23kospeHo6tqwq1HFLoNzag6Fgx/Ixj8SjD8jZpRdWyh2xilaQHKdKNpBQpv3vrVYvehEDQtQOGbIzN5OBrmoUhvIBy529PcXJBVULFoeoASirQmD4BCrfnl0BaZpgso4wZALa1Nxe5TPjQtQQmEoiuK3ad86FNQpiB9CsoUpE9BmYI0LUGZSEPPm7d+tXrztlMmImowSp+CkrHuv/5HoKVtHg9FVvJQ5E0eigwmBz55KLIuEGq9uHrztlOCzTtdJ3Cno2kJSq7qq2bTln/jLVGDQpFLA+HIgzwU2WavOwO/z0Ntz/BQ240Ubpub6z7IJxYUvnXrF9mfdpzEQ22NFG77jRVpbs8ShEw8xENtfw6Eo//LQ9ELKLzdM+fldzPesfKJAYVv3no4haLlgXDkMgq1PWyPAkweR9/loej6QDh6DW/ZTuyVHd+393VagmIOKq0tyJ7NjbR1PBRZzENtXlvd+YLVGghH7qbNkTOqW7YdNy1BKcDXHOMtkU2BlsitPNTWWN0SOZlv3frFVO3XhHceEQhFKikcuYq3tK3jocjfCt2nyZRnQSj/QbdFeajtUWqJLuGb2yr8Ldu+m09/5r6y/WuBlm0/p3D0PB6K3MNDba/zUFteM7VQspo0ymEmbAmEI3fzltYgC0XSXrlRsD6+uvXQQChSGQhFV4xuM0xzUKJb0gwoxkORp0w93eatbN7p6vGciaZg886D+ObIzECo9WIeiqyTJH8k82vF7m/WVL152ynczJESPBRp5eHoqsDmtrN5SzTjHS5TiVgocgxvaQ2a+QZjH9r26s3bJuR8yv8D+oQ28xBMASEAAAAASUVORK5CYII="></a></li>
+                </ul>
+            </div>
+            <style>
+                #slider2{
+                    width: 890px;
+                    height: 308px;
+                    background: white;
+                    margin-top: -53px;
+                    margin-right: 20px;
+                    border-radius: 4px;
+                    overflow: hidden;
+                }
+                #navslider2{
+                    height: 100%;
+                    width: 220px;
+                    float: left;
+                    border-right: 1px solid rgba(0,0,0,0.2);
+                    background: lightgrey;
+
+
+                }
+                #slider2img{
+                    height: 100%;
+                    width: 654px;
+                    background: url("images/unnamed.png");
+                    background-position: center;
+
+                   float: right;
+                }
+                #navslider2 ul{
+                    height: 100%;
+                    width: 220px;
+                    padding: 0;
+                }
+
+                #navslider2 ul li{
+                    height: 37.5px;
+                    width: 100%;
+
+                }
+                #navslider2 ul li a{
+                    display: block;
+                    height: 37.5px;
+                    width: 100%;
+                    text-align: center;
+
+                }
+
+                .slider2imgright{height: 100%;
+                width:354px;
+                    float: right;
+                }
+                .slider2imgleft{
+                    height: 100%;
+                    width: 300px;
+                    float: left;
+                    position: relative;
+
+                    line-height: 130px;
+                    font-size: large;
+                    font-weight: bold;
+                    color: rgba(0,0,0,0.8);
+                }
+                .slider2imgleft img {
+                    display: block;
+                    height: 193px;
+                    width: 193px;
+                    border-radius: 30px;
+                    position: absolute;
+
+                    top: 75px;
+
+                }
+                #slider2img a{
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                }
+                .slider2imgleft p{
+                    z-index: 1;
+                    position: absolute;
+                    padding-right: 55px;
+                   line-height: 50px;
+                    font-size: 15pt;
+                    text-align: right;
+                    padding: 0;
+                }
+               .slider2imgright .title{
+                    color: #a82c00;
+                   font-family: yekan;
+                   font-size: 16pt;
+                   padding-right: 45px;
+
+                }
+                .slider2imgright .priceinfo {
+
+                    height: 35px;
+
+
+                    margin-right: 45px;
+
+                    margin-top: -20px;
+
+                }
+                .oldprice::after{
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 8px 12px 8px 0;
+                    border-color: transparent #cccccc transparent transparent;
+                    position: absolute;
+                    content: " ";
+                    left: -10px;
+                    top: 9px;
+                    margin-right: 2px;
+                    z-index: 2;
+                }
+                .oldprice::before{
+                    content: "  ";
+                    position: absolute;
+                    width: 65px;
+                    border-bottom: 2px solid black;
+                   left: 10px;
+                    transform: rotate(-20deg);
+                    top: 17px;
+                    right: 5px;
+                }
+                .oldprice{
+                    width: 75px;
+                    height: 100%;
+                    float: right;
+                    position: relative;
+                    background:#cccccc;
+                    color: whitesmoke;
+
+
+                }
+
+                .newprice::after{
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 8px 12px 8px 0;
+                    border-color: transparent #fffcff transparent transparent;
+                    position: absolute;
+                    top: 9px;
+                    content: "";
+                    left:143px ;
+                }
+                .newprice{
+                    width: 155px;
+                    height: 100%;
+                    float: right;
+                    background: #a82c00;
+                    margin-right: 2px;
+                    position: relative;
+                    color: whitesmoke;
+                }
+                .feature{
+                    font-family: yekan;
+                    font-size: 12pt;
+                    padding-right: 60px;
+                    height: 30px;
+                    margin: 0;
+
+                }
+                .features{
+                    margin-top: 10px;
+                }
+                .pricefont{
+
+                    font-size: 21pt;
+                    text-align: center;
+                    line-height: 35px;
+                    font-weight: bolder;
+                    padding-right: 20px;
+                }
+                .pricefont2{
+                    font-size: 12pt;
+                    font-weight: bolder;
+                    display: inline-block;
+                    position: absolute;
+                    top: 10px;
+                    right: 80px;
+                }
+                #navslider2  .active {
+                    background: #d11414;
+                color: lightgrey;
+                    position: relative;
+                }
+   #navslider2  .active ::after{
+                content: "  ";
+       width: 0;
+       height: 0;
+       border-style: solid;
+       border-width: 19px 0 19px 20px;
+       border-color: transparent transparent transparent #d11414;
+                    position: absolute;
+       top: 0px;
+       right: -20px;
+   }
+    .sliderscrol{
+        height: 310px;
+        width: 890px;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.19);
+        margin-top: 10px;
+        background: #fff;
+        border-radius: 4px;
+        overflow: hidden;
+        margin-right: 20px;
+     }
+                .sliderscrol h3{
+
+
+                    background: #f7f9fa;
+                    height: 35px;
+                    padding-right: 10px;
+                    padding-top: 7px;
+                    font-family: yekan;
+                    font-size: 11.5pt;
+                    margin: 0;
+                    font-weight: normal;
+                }
+
+                .sliderscroll_content {
+                    height: 268px;
+                    width: 100%;
+                }
+                .sliderscrollnext,.sliderscrollprev{
+                    width: 55px;
+                    height: 100%;
+                    float: right;
+                }
+                .sliderscrollmain{
+                    width: 780px;
+                    height: 100%;
+                    float: right;
+                    overflow: hidden;
+                }
+               .sliderscrollprev .prev{
+                   width: 15px;
+                   right: 15px;
+                   height: 42px;
+                   background: url("images/slices.png") no-repeat;
+
+                   background-position: -812px -677px;
+                   display: block;
+                   position: relative;
+                   top: 100px;
+                   cursor: pointer;
+
+               }
+               .border{
+                   border-right: 2px solid rgba(0,0,0,0.4);
+               }
+                .sliderscrollnext .next {
+                    width: 15px;
+                    right: 15px;
+                    height: 42px;
+                    background: url("images/slices.png") no-repeat;
+
+                    background-position: -852px -677px;
+                    display: block;
+                    position: relative;
+                    top: 100px;
+                    cursor: pointer;
+                }
+                .sliderscrol .sliderscrollmain ul{
+                    padding: 0px;
+                    height: 100%;
+                    width: 975px;
+
+                }
+                .sliderscrol .sliderscrollmain ul li{
+                    width: 195px;
+                    height: 100%;
+                    float: right;
+                    display: inline-block;
+                }
+                .sliderscrol .sliderscrollmain ul li a{
+                    display: block;
+                    height: 100%;
+
+                    text-align: center;
+
+                }
+                .sliderscrol .sliderscrollmain ul li p{
+                    margin-top: 1px;
+                    margin-bottom: 1px;
+
+                   text-align: center;
+                    height: 20px;
+                }
+
+                .sliderscrol .price {
+                    color: green;
+                    font-size: 13pt;
+                }
+
+
+
+
+            </style>
+
+            <div id="slider2" >
+                <div id="slider2img">
+                    <a class="item">
+                    <div class="slider2imgright">
+                        <p class="title ">جشنواره ی ماه نو</p>
+                        <div class="priceinfo">
+                            <div class="oldprice pricefont" style="padding: 0">25</div>
+                            <div class="newprice "><span class="pricefont">28.5</span> <span class=" pricefont2" >هزار تومان</span></div>
+
+                        </div>
+                        <div class="features">
+                        <p class="yekan fonts feature">ضد اب</p>
+                        <p class="yekan fonts feature">در 5 رنگ مختلف</p>
+                        </div>
+                    </div>
+                    <div class="slider2imgleft" >
+                        <p class="yekan">
+                        چادر کودک مدل benten
+                        </p>
+                        <img src="images/s2-1.jpg">
+
+                    </div>
+                    </a>
+                    <a class="item">
+                    <div class="slider2imgright">
+                        <p class="title ">جشنواره ی ماه نو</p>
+                        <div class="priceinfo">
+                            <div class="oldprice pricefont" style="padding: 0">25</div>
+                            <div class="newprice "><span class="pricefont">28.5</span> <span class=" pricefont2" >هزار تومان</span></div>
+
+                        </div>
+                        <div class="features">
+                        <p class="yekan fonts feature">ضد اب</p>
+                        <p class="yekan fonts feature">در 5 رنگ مختلف</p>
+                        </div>
+                    </div>
+                    <div class="slider2imgleft" >
+                        <p class="yekan">
+                            دستمال کاغذی 100 برگ مدل green
+                        </p>
+                        <img src="images/s2-1%20(3).png">
+
+                    </div>
+                    </a>
+                    <a class="item">
+                    <div class="slider2imgright">
+                        <p class="title ">جشنواره ی ماه نو</p>
+                        <div class="priceinfo">
+                            <div class="oldprice pricefont" style="padding: 0">25</div>
+                            <div class="newprice "><span class="pricefont">28.5</span> <span class=" pricefont2" >هزار تومان</span></div>
+
+                        </div>
+                        <div class="features">
+                        <p class="yekan fonts feature">ضد اب</p>
+                        <p class="yekan fonts feature">در 5 رنگ مختلف</p>
+                        </div>
+                    </div>
+                    <div class="slider2imgleft" >
+                        <p class="yekan">
+                            کورن فلکس  گرجی مقدار 300 گرم
+                        </p>
+                        <img src="images/s2-1%20(2).png">
+
+                    </div>
+                    </a>
+                    <a class="item">
+                    <div class="slider2imgright">
+                        <p class="title ">جشنواره ی ماه نو</p>
+                        <div class="priceinfo">
+                            <div class="oldprice pricefont" style="padding: 0">25</div>
+                            <div class="newprice "><span class="pricefont">28.5</span> <span class=" pricefont2" >هزار تومان</span></div>
+
+                        </div>
+                        <div class="features">
+                        <p class="yekan fonts feature">ضد اب</p>
+                        <p class="yekan fonts feature">در 5 رنگ مختلف</p>
+                        </div>
+                    </div>
+                    <div class="slider2imgleft" >
+                        <p class="yekan">
+                            مایع ضدعفونی کننده سطوح افروز
+                        </p>
+                        <img src="images/s2-1%20(4).png">
+
+                    </div>
+                    </a>
+                    <a class="item">
+                    <div class="slider2imgright">
+                        <p class="title ">جشنواره ی ماه نو</p>
+                        <div class="priceinfo">
+                            <div class="oldprice pricefont" style="padding: 0">25</div>
+                            <div class="newprice "><span class="pricefont">28.5</span> <span class=" pricefont2" >هزار تومان</span></div>
+
+                        </div>
+                        <div class="features">
+                        <p class="yekan fonts feature">ضد اب</p>
+                        <p class="yekan fonts feature">در 5 رنگ مختلف</p>
+                        </div>
+                    </div>
+                    <div class="slider2imgleft" >
+                        <p class="yekan">
+                            بذر پونه وانیا سید مدل S48
+                        </p>
+                        <img src="images/s2-1%20(5).png">
+
+                    </div>
+                    </a>
+                    <a class="item">
+                    <div class="slider2imgright">
+                        <p class="title ">جشنواره ی ماه نو</p>
+                        <div class="priceinfo">
+                            <div class="oldprice pricefont" style="padding: 0">25</div>
+                            <div class="newprice "><span class="pricefont">28.5</span> <span class=" pricefont2" >هزار تومان</span></div>
+
+                        </div>
+                        <div class="features">
+                        <p class="yekan fonts feature">ضد اب</p>
+                        <p class="yekan fonts feature">در 5 رنگ مختلف</p>
+                        </div>
+                    </div>
+                    <div class="slider2imgleft" >
+                        <p class="yekan">
+                            خاک انداز طرح هلیا مدل b22
+                        </p>
+                        <img src="images/s2-1%20(1).png">
+
+                    </div>
+                    </a>
+                    <a class="item">
+                    <div class="slider2imgright">
+                        <p class="title ">جشنواره ی ماه نو</p>
+                        <div class="priceinfo">
+                            <div class="oldprice pricefont" style="padding: 0">25</div>
+                            <div class="newprice "><span class="pricefont">28.5</span> <span class=" pricefont2" >هزار تومان</span></div>
+
+                        </div>
+                        <div class="features">
+                        <p class="yekan fonts feature">ضد اب</p>
+                        <p class="yekan fonts feature">در 5 رنگ مختلف</p>
+                        </div>
+                    </div>
+                    <div class="slider2imgleft" >
+                        <p class="yekan">
+                            هندزفری 3D فوق الاده زیر قیمت
+                        </p>
+                        <img src="images/s2-2.jpg">
+
+                    </div>
+                    </a>
+                    <a class="item">
+                    <div class="slider2imgright">
+                        <p class="title ">جشنواره ی ماه نو</p>
+                        <div class="priceinfo">
+                            <div class="oldprice pricefont" style="padding: 0">25</div>
+                            <div class="newprice "><span class="pricefont">28.5</span> <span class=" pricefont2" >هزار تومان</span></div>
+
+                        </div>
+                        <div class="features">
+                        <p class="yekan fonts feature">ضد اب</p>
+                        <p class="yekan fonts feature">در 5 رنگ مختلف</p>
+                        </div>
+                    </div>
+                    <div class="slider2imgleft" >
+                        <p class="yekan">
+                            همبرگر 200 گرمی گوشت سگ
+                        </p>
+                        <img src="images/s2-4.jpg">
+
+                    </div>
+                    </a >
+
+                </div>
+                <div id="navslider2">
+                    <ul>
+                        <li>
+                            <a class="yekan fontm">
+چادر کودک مدل benten
+                            </a>
+                        </li>
+                        <li>
+                            <a class="yekan fontm">
+ دستمال کاغذی 100 برگ مدل green
+                            </a>
+                        </li> <li>
+                            <a class="yekan fontm">
+                                کورن فلکس عسلی گرجی مقدار 300 گرم
+                            </a>
+                        </li> <li>
+                            <a class="yekan fontm">
+                                مایع ضدعفونی کننده سطوح افروز
+                            </a>
+                        </li> <li>
+                            <a class="yekan fontm">
+                                بذر پونه وانیا سید مدل S48
+                            </a>
+                        </li> <li>
+                            <a class="yekan fontm">
+                                خاک انداز طرح هلیا مدل b22
+                            </a>
+                        </li> <li>
+                            <a class="yekan fontm">
+ هندزفری 3D فوق الاده زیر قیمت
+                            </a>
+                        </li> <li>
+                            <a class="yekan fontm">
+همبرگر 200 گرمی گوشت سگ
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+
+
+            </div>
+            <div class="sliderscrol">
+<h3 >
+    فقط در دیجی کالا
+</h3>
+                <div class="sliderscroll_content">
+                    <div class="sliderscrollnext">
+                        <a class="next" onclick="scrollslider('next',this)"></a>
+                     </div>
+                    <div class="sliderscrollmain">
+                        <ul>
+                            <li>
+                                <a>
+                                    <img src="images/sliderscroll_1.jpg">
+                                    <img src="images/exclusive-blue.png">
+                                    <p class="yekan fonts">گوشی سامسونگ</p>
+                                    <p class="yekan price">340,000 ریال</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img src="images/sliderscroll2_1.jpg">
+                                    <img src="images/exclusive-blue.png">
+                                    <p class="yekan fonts">گوشی سامسونگ</p>
+                                    <p class="yekan price">1,222,000 ریال</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img src="images/sliderscroll2_2.jpg">
+                                    <img src="images/exclusive-blue.png">
+                                    <p class="yekan fonts">گوشی سامسونگ</p>
+                                    <p class="yekan price">520,000 ریال</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img src="images/sliderscroll2_3.jpg">
+                                    <img src="images/exclusive-blue.png">
+                                    <p class="yekan fonts">گوشی سامسونگ</p>
+                                    <p class="yekan price">802,000 ریال</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img src="images/sliderscroll2_4.jpg">
+                                    <img src="images/exclusive-blue.png">
+                                    <p class="yekan fonts">گوشی سامسونگ</p>
+                                    <p class="yekan price">420,000 ریال</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="sliderscrollprev">
+                        <a class="prev" onclick="scrollslider('prev',this)"></a>
+                    </div>
+                </div>
+
+            </div>
+            <style>
+                .direct-access {
+                    width: 290px;
+                    height: 190px;
+                    display: block;
+                    float: right;
+                    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.19);
+                    margin-top: 10px;
+                    background: #fff;
+                    border-radius: 4px;
+                    overflow: hidden;
+                    margin-left: 10px;
+                    margin-right: 20px;
+
+                }
+
+   #parentaccess{
+       width: 950px;
+       height: 700px;
+
+   }
+
+            </style>
+     <div id="parentaccess">
+            <a class="direct-access">
+
+                <img src="images/direct-access1.jpg" style="margin:0">
+
+            </a>
+
+            <a class="direct-access" style="width: 590px;margin-left: 0;margin-right: 0">
+
+                <img src="images/direct-access2.jpg">
+
+            </a>
+            <a class="direct-access">
+
+                <img src="images/direct-access3.jpg">
+
+            </a>
+            <a class="direct-access"style="margin-right: 0">
+
+                <img src="images/direct-access4.jpg">
+
+            </a>
+            <a class="direct-access" style="margin-left: 0;margin-right: 0">
+
+                <img src="images/direct-access5.jpg">
+
+            </a>
+
+            <a class="direct-access" style="width: 590px;">
+
+                <img src="images/direct-access6.jpg">
+
+            </a>
+
+            <a class="direct-access" style="margin-left: 0;margin-right: 0">
+
+                <img src="images/direct-access7.jpg">
+
+            </a>
+     </div>
+
+
+
+
+            <div class="sliderscrol" style="margin-top: -90px">
+                <h3 >
+                    فقط در دیجی کالا
+                </h3>
+                <div class="sliderscroll_content">
+                    <div class="sliderscrollnext">
+                        <a class="next" onclick="scrollslider('next',this)"></a>
+                    </div>
+                    <div class="sliderscrollmain">
+                        <ul>
+                            <li>
+                                <a>
+                                    <img src="images/sliderscroll_1.jpg">
+                                    <img src="images/exclusive-blue.png">
+                                    <p class="yekan fonts">گوشی سامسونگ</p>
+                                    <p class="yekan price">340,000 ریال</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img src="images/sliderscroll2_1.jpg">
+                                    <img src="images/exclusive-blue.png">
+                                    <p class="yekan fonts">گوشی سامسونگ</p>
+                                    <p class="yekan price">1,222,000 ریال</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img src="images/sliderscroll2_2.jpg">
+                                    <img src="images/exclusive-blue.png">
+                                    <p class="yekan fonts">گوشی سامسونگ</p>
+                                    <p class="yekan price">520,000 ریال</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img src="images/sliderscroll2_3.jpg">
+                                    <img src="images/exclusive-blue.png">
+                                    <p class="yekan fonts">گوشی سامسونگ</p>
+                                    <p class="yekan price">802,000 ریال</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img src="images/sliderscroll2_4.jpg">
+                                    <img src="images/exclusive-blue.png">
+                                    <p class="yekan fonts">گوشی سامسونگ</p>
+                                    <p class="yekan price">420,000 ریال</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="sliderscrollprev">
+                        <a class="prev" onclick="scrollslider('prev',this)"></a>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="sliderscrol">
+                <h3 >
+                    فقط در دیجی کالا
+                </h3>
+                <div class="sliderscroll_content">
+                    <div class="sliderscrollnext">
+                        <a class="next" onclick="scrollslider('next',this)"></a>
+                    </div>
+                    <div class="sliderscrollmain">
+                        <ul>
+                            <li>
+                                <a>
+                                    <img src="images/sliderscroll_1.jpg">
+                                    <img src="images/exclusive-blue.png">
+                                    <p class="yekan fonts">گوشی سامسونگ</p>
+                                    <p class="yekan price">340,000 ریال</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img src="images/sliderscroll2_1.jpg">
+                                    <img src="images/exclusive-blue.png">
+                                    <p class="yekan fonts">گوشی سامسونگ</p>
+                                    <p class="yekan price">1,222,000 ریال</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img src="images/sliderscroll2_2.jpg">
+                                    <img src="images/exclusive-blue.png">
+                                    <p class="yekan fonts">گوشی سامسونگ</p>
+                                    <p class="yekan price">520,000 ریال</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img src="images/sliderscroll2_3.jpg">
+                                    <img src="images/exclusive-blue.png">
+                                    <p class="yekan fonts">گوشی سامسونگ</p>
+                                    <p class="yekan price">802,000 ریال</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img src="images/sliderscroll2_4.jpg">
+                                    <img src="images/exclusive-blue.png">
+                                    <p class="yekan fonts">گوشی سامسونگ</p>
+                                    <p class="yekan price">420,000 ریال</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="sliderscrollprev">
+                        <a class="prev" onclick="scrollslider('prev',this)"></a>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="sliderscrol">
+                <h3 >
+                    فقط در دیجی کالا
+                </h3>
+                <div class="sliderscroll_content">
+                    <div class="sliderscrollnext">
+                        <a class="next" onclick="scrollslider('next',this)"></a>
+                    </div>
+                    <div class="sliderscrollmain">
+                        <ul>
+                            <li>
+                                <a>
+                                    <img src="images/sliderscroll_1.jpg">
+                                    <img src="images/exclusive-blue.png">
+                                    <p class="yekan fonts">گوشی سامسونگ</p>
+                                    <p class="yekan price">340,000 ریال</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img src="images/sliderscroll2_1.jpg">
+                                    <img src="images/exclusive-blue.png">
+                                    <p class="yekan fonts">گوشی سامسونگ</p>
+                                    <p class="yekan price">1,222,000 ریال</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img src="images/sliderscroll2_2.jpg">
+                                    <img src="images/exclusive-blue.png">
+                                    <p class="yekan fonts">گوشی سامسونگ</p>
+                                    <p class="yekan price">520,000 ریال</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img src="images/sliderscroll2_3.jpg">
+                                    <img src="images/exclusive-blue.png">
+                                    <p class="yekan fonts">گوشی سامسونگ</p>
+                                    <p class="yekan price">802,000 ریال</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <img src="images/sliderscroll2_4.jpg">
+                                    <img src="images/exclusive-blue.png">
+                                    <p class="yekan fonts">گوشی سامسونگ</p>
+                                    <p class="yekan price">420,000 ریال</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="sliderscrollprev">
+                        <a class="prev" onclick="scrollslider('prev',this)"></a>
+                    </div>
+                </div>
+            </div>
+
+            <style>
+
+
+
+                footer {
+                    height: 300px;
+                    float: right;
+                    margin-top: 40px;
+                    width: 100%;
+
+                }
+
+                #footer_top {
+                    background: #6d717a none repeat scroll 0 0;
+                    height: 45px;
+                }
+
+                #footer_bottom {
+                    height: 255px;
+                    background: #f7f8fa none repeat scroll 0 0;
+                }
+
+                footer .main {
+                    width: 1200px;
+                    height: 100%;
+                    margin: auto;
+                }
+
+                #footer_top span {
+                    color: #fff;
+                    line-height: 40px
+                }
+
+                #footer_top i {
+                    background: url(images/slices.png);
+                    display: inline-block;
+                    float: left;
+                    height: 17px;
+                    margin-right: 14px;
+                    margin-top: 10px;
+                    width: 17px;
+                }
+
+                #footer_top ul {
+                    padding: 0;
+                    float: left;
+                    height: 100%;
+                }
+
+                #footer_top li {
+                    float: right;
+                    height: 100%;
+                    margin-left: 15px;
+                }
+
+                #footer_top li a {
+                    color: #fff;
+                    line-height: 42px;
+                }
+            </style>
+
+        </div>
+                          </div>
+    <footer>
+
+        <div id="footer_top">
+            <div class="main">
+
+            <span class="yekan fontlg">
+                 ۷ روز هفته، ۲۴ ساعته پاسخگوی شما هستیم.
+            </span>
+
+                <ul>
+                    <li>
+                        <a class="yekan">
+
+                            <?= $option['tel']; ?>
+                            <i style="background-position: -397px -420px; "></i>
+    0632237041
+                        </a>
+                    </li>
+                    <li>
+                        <a class="yekan">
+                            سوالات متداول
+                            <i style="background-position: -358px -420px; "></i>
+
+                        </a>
+                    </li>
+                    <li>
+                        <a class="yekan">
+                            <?= $option['email']; ?>
+                            <i style="background-position: -321px -420px; "></i>
+                            km6713@gmail.com
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+        <style>
+            #footer_bottom .right {
+                width: 220px;
+                height: 100%;
+                float: right;
+            }
+
+            #footer_bottom .center {
+                width: 220px;
+                height: 100%;
+                float: right;
+            }
+
+            #footer_bottom .left {
+                width: 590px;
+                height: 100%;
+                float: left;
+            }
+
+            #footer_bottom ul li {
+                font-family: yekan;
+                font-size: 11.3pt;
+                line-height: 58px;
+            }
+
+            #footer_bottom .title2 {
+                font-size: 14pt;
+            }
+
+            #footer_bottom .email input {
+                width: 430px;
+                height: 38px;
+                border: 1px solid #ccc;
+                font-family: yekan;
+            }
+
+            #footer_bottom .email .btn {
+                background: #208de6 none repeat scroll 0 0;
+                display: block;
+                float: left;
+                height: 38px;
+                margin-left: 28px;
+                margin-top: 2px;
+                width: 110px;
+                box-shadow: 0 2px 3px rgba(0,0,0,.2);
+                text-align: center;
+                color:#fff;
+                font-family: yekan;
+                line-height: 32px;
+                font-size: 10pt;
+            }
+
+            footer .social{float: left;margin-top: 26px;width: 100%;}
+            footer .social img {float: left;margin-left: 4px;}
+            .social_button{width: 28px;height: 28px;display: block;float: right;background: url(images/slices.png);margin-right: 4px;}
+        </style>
+
+        <div id="footer_bottom">
+
+            <div class="main">
+
+                <div class="right">
+
+                    <ul>
+                        <li><a class="title2">راهنمای خرید از دیجی‌کالا</a></li>
+                        <li><a> ثبت سفارش</a></li>
+                        <li><a>رویه های ارسال سفارش</a></li>
+                        <li><a>شیوه های پرداخت</a></li>
+
+
+                    </ul>
+
+                </div>
+                <div class="center">
+                    <ul>
+                        <li><a class="title2">راهنمای خرید مشتریان</a></li>
+                        <li><a> ثبت سفارش</a></li>
+                        <li><a>رویه های ارسال سفارش</a></li>
+                        <li><a>شیوه های پرداخت</a></li>
+
+
+                    </ul>
+                </div>
+                <div class="left">
+                    <p class="title2 yekan">
+                        اولین نفری که مطلع می شود، باشید!
+                    </p>
+
+                    <div class="email">
+                        <input type="text">
+                        <span class="btn">
+                        تایید ایمیل
+                    </span>
+                    </div>
+
+                    <div class="social">
+
+                        <a>
+                            <img src="images/ios_app_bg.png">
+                        </a>
+                        <a>
+                            <img src="images/android_app_bg.png">
+                        </a>
+
+                        <span class="social_button" style="background-position:-577px -621px; "></span>
+                        <span class="social_button" style="background-position:-453px -621px; "></span>
+                        <span class="social_button" style="background-position:-494px -621px; "></span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </footer>
+
+
+
+
+    <script>
+
+
+
+
+
+
+
+
+
+
+        function scrollslider(direction,tag) {
+
+            var a_tag=$(tag);
+            var scrolltag=a_tag.parents(".sliderscrol");
+            var scrollsliderUl=scrolltag.find('.sliderscrollmain ul');
+            var scrollsliderli=scrollsliderUl.find('li');
+            var scrollsliderlinum=scrollsliderli.length;
+            var scrollslidernum=Math.ceil(scrollsliderlinum/4);
+            var  maxmarginright=-(scrollslidernum-1)*780;
+            var marginRightOld=scrollsliderUl.css('margin-right');
+            marginRightOld=parseFloat(marginRightOld);
+            var marginRightnew;
+
+            if (direction == 'next'){
+
+                marginRightnew=marginRightOld+780;
+
+
+
+
+            }if(direction == 'prev'){
+                marginRightnew=marginRightOld-780;
+
+
+
+
+            }
+            if (marginRightnew < maxmarginright){
+                marginRightnew=0;
+            }
+            if (marginRightnew > 0){
+                marginRightnew=maxmarginright;
+            }
+
+            scrollsliderUl.animate({'marginRight':marginRightnew},1500);
+
+        }
+
+        $('.prev').click(function () {
+            scrollslider('prev');
+            
+        });
+        $('.next').click(function () {
+            scrollslider('next');
+
+
+        });
+        $('.prev').click(function () {
+            $('.sliderscrollprev').addClass('.border')
+        })
+
+
+
+
+
+        var slidertag2=$('#slider2');
+        var slideritems2=slidertag2.find('.item');
+        var nextslide2=1;
+      var numslides2=slideritems2.length;
+      var slidernav2=slidertag2.find("#navslider2 ul li");
+      var timeout=3000;
+
+
+        function slider2() {
+            if (nextslide2>numslides2){
+
+                nextslide2=1;
+            }if(nextslide2<1){
+                nextslide2=numslides2
+            }
+
+            slideritems2.hide();
+            slideritems2.eq(nextslide2-1).fadeIn(100);
+            slidernav2.removeClass('active');
+            slidernav2.eq(nextslide2-1).addClass('active');
+            nextslide2++;
+        }
+
+        function goslide2(index) {
+            nextslide2=index;
+            slider2();
+        }
+        $('#slider2 #navslider2 li').hover(function () {
+            clearInterval(sliderinterval2);
+            var index=$(this).index();
+            goslide2(index+1);
+            
+        },function () {
+            
+        })
+
+
+        slider2();
+        var sliderinterval2=setInterval(slider2,timeout);
+        slidertag2.mouseleave(function () {
+            clearInterval(sliderinterval2);
+            sliderinterval2=setInterval(slider2,timeout);
+
+        })
+
+        var timer={};
+
+        var slidertag=$('#slider');
+        var slideritems=slidertag.find('.item');
+        var nextslide=1;
+        var numslides=slideritems.length;
+        var slidernav=slidertag.find("#slidernav ul li");
+        var timeout=3000;
+
+
+        function slider() {
+            if (nextslide>numslides){
+
+                nextslide=1;
+            }
+
+            slideritems.hide();
+            slideritems.eq(nextslide-1).fadeIn(100);
+            slidernav.removeClass('active');
+            slidernav.eq(nextslide-1).addClass('active');
+            nextslide++;
+        }
+        function gonext() {
+            slider();
+        }
+        function goprev() {
+            slider();
+
+        }
+
+        function goslide(index) {
+            nextslide=index;
+            slider();
+        }
+        $('#slider #slidernav li').hover(function () {
+            clearInterval(sliderinterval);
+            var index=$(this).index();
+            goslide(index+1);
+
+        },function () {
+
+        })
+
+        $('#slider #next').click(function () {
+            clearInterval(sliderinterval);
+            gonext();
+
+        });
+        $('#slider #prev').click(function () {
+            clearInterval(sliderinterval);
+
+            if (nextslide<1){
+                nextslide=numslides;
+            }
+            nextslide=nextslide-2;
+            goprev();
+        });
+        slider();
+        var sliderinterval=setInterval(slider,timeout);
+        slidertag.mouseleave(function () {
+            clearInterval(sliderinterval);
+            sliderinterval=setInterval(slider,timeout);
+
+        })
+
+        var timer={};
+
+
+
+        $('#main-menue li').hover(function hover(){
+
+        var tag=$(this);
+        var timerAttr=tag.attr('data-time');
+       
+        clearTimeout(timer[timerAttr]);
+
+        timer[timerAttr] = setTimeout(function () {
+
+
+
+               $(' > ul', tag).fadeIn(0);
+               tag.addClass('activemenue');
+               $(' > .submenue3', tag).fadeIn(0);
+
+        },500);
+
+    },function () {
+        var tag=$(this);
+        var timerAttr=tag.attr('data-time');
+        clearTimeout(timer[timerAttr]);
+        tag.removeClass('activemenue')
+        timer[timerAttr]=setTimeout(function () {
+
+
+    $(' > ul',tag).fadeOut(0);
+        $(' > .submenue3',tag).fadeOut(0);
+        },500);
+})
+
+
+
+
+setTimeout(hover,3000);
+
+
+
+
+
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </body>
+    </html>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" serverName="https://github.com/kasramahdavi/digikala.git" uploadOnCheckin="cdac38a4-79c3-4226-bcb2-e7c82f53a1ce">
+    <serverData>
+      <paths name="https://github.com/kasramahdavi/digikala.git">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+    <option name="myUploadOnCheckinName" value="https://github.com/kasramahdavi/digikala.git" />
+  </component>
+</project>

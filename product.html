@@ -1,0 +1,3526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>online digikala shop</title>
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/jquery.flipTimer.js"></script>
+    <script src="js/jquery.elevatezoom.js"></script>
+    <script src="js/jquery.mCustomScrollbar.js"></script>
+    <script src="js/jquery.mousewheel.js"></script>
+    <link href="css/flipTimer.css" rel="stylesheet">
+    <link href="css/jquery.mCustomScrollbar.css" rel="stylesheet">
+    <style type="text/css">
+
+    </style>
+</head>
+<body style="margin-top: 0; background-color: #898a87">
+
+<style>
+    @font-face {
+        font-family: yekan;
+        src :url('fonts/Yekan.ttf') format('truetype'),
+        url('fonts/Yekan.eot?#iefix') format('embedded-opentype');
+    }
+    div,span,p,a,li{text-align: right; direction: rtl;}
+    a{text-decoration: none }
+    .yekan{font-family: yekan;}
+    .fonts{font-size:11pt ;}
+    .fontm{font-size:11.5pt ;}
+    .fontl{font-size: 12.3pt;}
+    .fontss{font-size: 9.5pt;}
+</style>
+
+
+
+<style>
+    .header {
+        height: 160px;
+        background: #fafcfc;
+        text-align: center;
+        padding-top: 15px;
+        color: rgba(0,0,0,0.6);
+    }
+
+    .header i {
+        width: 70px;
+        height: 52px;
+        background: url(images/slices.png) no-repeat -870px -89px;
+        margin: auto;
+        display: block;
+    }
+
+    .header h2 {
+        font-size: 14pt;
+        font-family: yekan;
+        text-align: center;
+    }
+
+    .header .left, .header .right {
+        width: 50%;
+        float: right;
+    }
+
+    .header .left {
+        line-height: 52px;
+        padding-top: 49px;
+        width: 40%;
+    }
+
+    .header .right {
+        padding-right: 40px;
+        padding-top: 32px;
+    }
+
+    .header input[type=text], .header input[type=password] {
+        width: 250px;
+        height: 30px;
+        border: 1px solid gray;
+    }
+
+    .header label {
+        display: inline-block;
+        font-family: yekan;
+        font-size: 10.5pt;
+        width: 150px;
+    }
+
+    .header .right > div {
+        margin-top: 25px;
+        font-family: yekan;
+        font-size: 10.3pt;
+    }
+
+    .header .btn {
+        background: #208de6 none repeat scroll 0 0;
+        display: block;
+        float: left;
+        height: 38px;
+        margin-left: 28px;
+        margin-top: 2px;
+        width: 110px;
+        box-shadow: 0 2px 3px rgba(0, 0, 0, .6);
+        text-align: center;
+        color: #fff;
+        font-family: yekan;
+        line-height: 32px;
+        font-size: 10pt;
+    }
+
+
+    .check_label{
+        border: 1px solid gray;
+        border-radius: 1px;
+        display: block;
+        height: 14px;
+        position: absolute;
+        right: 3px;
+        top: 5px;
+        width: 14px !important;
+    }
+
+    .check_label.checked{
+        background: url(images/slices.png) #595ce1 no-repeat -193px -82px;
+        border: none;
+    }
+
+    .check_div{
+        position: relative;
+    }
+    .check_input{
+        display: inline-block;
+        height: 16px;
+        margin: 0;
+        opacity: 0;
+        position: relative;
+        right: 1px;
+        top: 2px;
+        width: 16px;
+        z-index: 2;
+        cursor: pointer;
+        margin-left: 30px;
+
+
+    }
+
+
+</style>
+
+
+<div id="main" style="width: 1200px;margin:10px auto;height: auto;">
+    <style>
+        #offer {
+            height: 60px;
+            background: #fff5f5 url("images/amazing-offer.png") no-repeat scroll 97% center;
+            position: relative;
+
+        }
+
+        .flipTimer {
+            position: absolute;
+            top: -19px;
+            left: -161px;
+            transform: scale(.3);
+        }
+
+        .flipTimer, .flipTimer div {
+            direction: ltr !important;
+        }
+
+        #offer .discount {
+            display: block;
+            height: 28px;
+            left: 200px;
+            position: absolute;
+            top: 16px;
+            width: 180px;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+        .price_info_old::after {
+            content: " ";
+            position: absolute;
+            left: -11px;
+            top: 8px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 8px 12px 8px 0;
+            border-color: transparent #cccccc transparent transparent;
+            z-index: 2;
+
+        }
+
+        #offer .discount .right {
+            width: 105px;
+            height: 100%;
+            background: red;
+            float: right;
+            display: block;
+        }
+
+        #offer .discount .left {
+            width: 75px;
+            height: 100%;
+            background: #e54949;
+            float: right;
+            display: block;
+        }
+
+        #offer .discount .right .number {
+            color: #fff;
+            font-size: 16pt;
+            line-height: 20px;
+            padding-right: 10px;
+            font-weight: bolder;
+            margin-top: 2px;
+            display: inline-block;
+            top: 2px;
+            position: relative;
+        }
+
+        #offer .discount .right .tuman {
+            color: #fff;
+            display: inline-block;
+            font-size: 9pt;
+            height: 35px;
+            line-height: 9px;
+            margin-right: 25px;
+            position: relative;
+            top: 3px;
+            width: 40px;
+        }
+
+        #offer .left span {
+            color: #fff;
+            font-size: 12pt;
+            left: -5px;
+            padding-right: 11px;
+            position: relative;
+            top: -1px;
+            font-weight: bolder;
+        }
+
+    </style>
+
+     <div style="width: 1180px;">
+    <div id="offer">
+
+        <span class="discount">
+<span class="right yekan">
+
+<span class="number">46</span>
+
+                         <span class="tuman">
+  هزار تومان
+            </span>
+
+              </span>
+                <span class="left yekan">
+<span>
+ تخفیف
+</span>
+   </span>
+     </span>
+
+        <div class="flipTimer">
+
+            <div class="hours"></div>
+            <div class="minutes"></div>
+            <div class="seconds"></div>
+        </div>
+
+
+    </div>
+    <style>
+        #details {
+            float: right;
+            margin-top: 5px;
+            width: 100%;
+
+        }
+
+        #details .right {
+            width: 450px;
+            float: right;
+        }
+
+        #details .share {
+            float: right;
+            width: 100%;
+            padding: 20px 0;
+        }
+
+        #details .share i {
+            background: url(images/slices.png) no-repeat;
+            width: 20px;
+            height: 20px;
+            display: block;
+            float: left;
+            margin-left: 6px;
+        }
+
+        #details .gallery {
+            float: right;
+            width: 100%;
+            text-align: center;
+        }
+
+        #details .gallery ul {
+            float: right;
+            width: 100%;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        #details .gallery ul li {
+            border: 1px solid #eee;
+            float: right;
+            height: 71px;
+            margin-right: 6px;
+            padding-top: 10px;
+            text-align: center;
+            width: 80px;
+            cursor: pointer;
+
+        }
+
+        .senoghte {
+            background: url(images/slices.png) no-repeat -562px -28px;
+            width: 35px;
+            height: 17px;
+            display: block;
+            margin-top: 21px;
+            margin-right: 20px
+        }
+
+
+         #details .left {
+             width: 750px;
+             float: left;
+             padding: 20px 0;
+         }
+
+
+    </style>
+    <div id="details" style="background: #fff;box-shadow: 0 1px 3px #eee;">
+
+        <div class="right">
+            <div class="share">
+                <i class="social" style="background-position: -213px -187px"></i>
+                <i class="addtofavorite" style="background-position: -160px -187px"></i>
+            </div>
+
+            <div class="gallery">
+               <img id="zoomproduct" src="images/products/1/product_350.jpg" data-zoom-image="images/products/1/product.jpg">
+                <ul>
+                    <li><span class="senoghte" ></span></li>
+
+                    <li data-main-image="images/products/1/gallery/large/1472662586.jpg"> <img src="images/product5_1.jpg"></li>
+                    <li data-main-image="images/products/1/gallery/large/1472662590.jpg"><img src="images/product5_2.jpg"></li>
+                    <li data-main-image="images/products/1/gallery/large/1472662593.jpg"><img src="images/product5_3.jpg"></li>
+                    <li><img src="images/product5_4.jpg"></li>
+
+
+                </ul>
+            </div>
+            <script>
+                $('#zoomproduct').elevateZoom({'zoomWindowOffetx':-800,'lensFadein':2000,'tint':true});
+            </script>
+
+
+    </div>
+        <style>
+            #details .left {
+                width: 700px;
+                float: left;
+                padding: 20px 0;
+            }
+
+            #details .left .title {
+                font-family: yekan;
+                font-size: 15pt;
+                background: #eee;
+                border-radius: 4px;
+                padding: 8px;
+            }
+
+            .gray {
+                background: rgba(0, 0, 0, 0) url(images/stars.png) repeat scroll 0 -9px;
+                height: 9px;
+                margin: 0 auto;
+                position: relative;
+                width: 55px;
+            }
+
+            .red {
+                background: rgba(0, 0, 0, 0) url(images/stars.png) repeat scroll 0 0;
+                height: 9px;
+                left: 0;
+                position: absolute;
+                top: 0;
+                width: 50%;
+            }
+
+            .stars {
+                float: left;
+                margin-left: 15px;
+            }
+
+            .rate {
+                float: left;
+                font-size: 9.5pt;
+                font-family: yekan;
+                margin-top: 3px;
+            }
+
+            #details .left .right {
+                width: 415px;
+                float: right;
+            }
+
+            #details .left .right h4 {
+                font-size: 9.8pt;
+                font-family: yekan;
+                font-weight: lighter;
+            }
+
+            #details .left .left {
+                width: 300px;
+                float: left;
+            }
+
+            #details .colors {
+                float: right;
+                margin-bottom: 13px;
+                padding: 0;
+                width: 100%;
+            }
+
+            #details .colors li {
+                width: 46px;
+                height: 28px;
+                float: right;
+                margin-left: 6px;
+                border: 1px solid #ccc;
+                background: #eee;
+                font-size: 9pt;
+                font-family: yekan;
+                padding-right: 32px;
+                position: relative;
+                cursor: pointer;
+                line-height: 30px;
+
+            }
+
+            #details .colors li .circle {
+
+                border-radius: 50%;
+                display: block;
+                height: 17px;
+                position: absolute;
+                right: 6px;
+                top: 5px;
+                width: 17px;
+
+            }
+
+            #details .colors li .circle.active::after {
+
+                content: " ";
+                width: 10px;
+                height: 10px;
+                position: absolute;
+                right: 4px;
+                top: 4px;
+                display: block;
+                background: url(images/slices.png) no-repeat -169px -83px;
+
+            }
+
+        </style>
+        <div class="left">
+            <div class="title">sansung galaxy note
+                <div class="stars">
+                <div class="gray ">
+                    <div class="red">
+
+                    </div>
+                </div>
+                    <span class="rate">
+                   4
+                        رای
+                    از
+                    80
+                    رای</span>
+
+
+            </div>
+
+        </div>
+            <div class="right">
+                <h4>انتخاب رنگ</h4>
+                <ul class="colors">
+
+                    <li>
+                        <span class="circle" style="background: black"></span>
+
+                        black
+                    </li>
+                    <li>
+                        <span class="circle" style="background: white"></span>
+                        with
+                    </li>
+
+
+                </ul>
+                <h4>انتخاب گارانتی</h4>
+
+
+
+                <style>
+                    #selectlist {
+                        width: 390px;
+                        height: 37px;
+                        border: 1px solid #ccc;
+                        background: #eee;
+                        position: relative;
+                        text-align: center;
+                        cursor: pointer;
+                    }
+
+                    #selectlist::before {
+                        content: " ";
+                        width: 23px;
+                        height: 23px;
+                        display: block;
+                        position: absolute;
+                        right: 3px;
+                        top: 9px;
+                        background: url(images/slices.png) no-repeat -138px -79px;
+                    }
+
+                    #selectlist::after {
+                        content: " ";
+                        width: 22px;
+                        height: 17px;
+                        display: block;
+                        position: absolute;
+                        left: 3px;
+                        top: 13px;
+                        background: url(images/slices.png) no-repeat -31px -461px;
+                    }
+
+                    #selectlist span {
+                        font-size: 9.7pt;
+                        line-height: 36px;
+                    }
+
+                    #selectlist ul {
+                        padding: 0;
+                        box-shadow: 0 2px 2px #cacaca;
+                        display: none;
+                        background: #fff;
+                        height: 120px;
+
+                    }
+
+                    #selectlist ul li {
+                        font-family: yekan;
+                        font-size: 10pt;
+                        padding: 2px 5px;
+
+                    }
+
+                    #selectlist ul li:hover {
+                        background: #f9f9ff;
+
+                    }
+
+
+                </style>
+                <div id="selectlist">
+
+                    <span class="yekan zamanattitle">
+18 ماه هما گارانتی
+                    </span>
+
+                    <ul>
+
+                        <li >  گارانتی 1</li>
+                        <li >گارانتی 2</li>
+                        <li >گارانتی 3</li>
+
+
+
+                    </ul>
+
+                </div>
+                <style>
+                    #price {
+                        float: right;
+                        width: 100%;
+                        margin-top: 40px;
+                    }
+
+                    #price .discount {
+                        display: block;
+                        float: left;
+                        font-family: yekan;
+                        font-size: 9pt;
+                        height: 22px;
+                        margin-left: 100px;
+                        margin-top: 5px;
+                        width: 135px;
+                    }
+
+                    .discount_right {
+                        width: 50px;
+                        height: 100%;
+                        float: right;
+                        display: block;
+                        background: red;
+                        color: #fff;
+                        text-align: center;
+                    }
+
+                    .discount_left {
+                        width: 85px;
+                        height: 100%;
+                        float: right;
+                        display: block;
+                        background: #ff5484;
+                        color: #fff;
+                        text-align: center;
+                    }
+                </style>
+                <div id="price">
+
+
+                    <span class="yekan" style="font-size: 9pt;">
+                        قیمت:
+                    </span>
+                    <span class="yekan" style="font-size:11pt;text-decoration: line-through;">
+120000
+                    </span>
+                    <span class="yekan" style="font-size: 9pt;">
+تومان
+                     </span>
+
+                    <span class="discount">
+                    <span class="discount_right">
+                        تخفیف
+                    </span>
+                    <span class="discount_left">
+
+                        تومان
+                    </span>
+                    </span>
+
+
+
+
+
+                </div>
+                <style>
+                    #priceforyou {
+                        float: right;
+                        width: 100%;
+                        margin-top: 30px;
+
+                    }
+
+                    #compare {
+                        float: right;
+                        width: 100%;
+                        margin-top: 30px;
+                    }
+
+                    .compare_btn {
+                        width: 155px;
+                        height: 40px;
+                        background: #ccc;
+                        border-radius: 4px;
+                        float: right;
+                        display: block;
+                        font-size: 12.4pt;
+                        color: #fff;
+                        text-align: center;
+                        box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.15);
+                        line-height: 35px;
+                    }
+
+                    .addtocart_btn {
+                        width: 210px;
+                        height: 40px;
+                        background: green;
+                        border-radius: 4px;
+                        float: right;
+                        display: block;
+                        margin-right: 7px;
+                        font-size: 12.4pt;
+                        color: #fff;
+                        overflow: hidden;
+                        text-align: center;
+                        box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2);
+                        line-height: 35px;
+                    }
+
+                    .addtocart_btn::before {
+                        content: " ";
+                        width: 210px;
+                        height: 40px;
+                        background: rgba(0,0,0,0.1);
+                        border-radius: 4px;
+                        float: right;
+                        display:inline-block;
+                        margin-right: 7px;
+                        position: absolute;
+                        right: 705px;
+
+                        overflow: hidden;
+
+
+
+                    }
+
+                    .addtocart_btn i {
+                        background: limegreen url("images/slices.png") no-repeat scroll -153px -412px;
+                        display: block;
+                        float: right;
+                        height: 100%;
+                        width: 40px;
+                    }
+
+                </style>
+                <div id="priceforyou">
+                    <span class="yekan" style="font-size: 12.5pt;">
+                        قیمت برای شما:
+                    </span>
+                    <span class="yekan" style="font-size: 13.5pt;color:#0f0;">
+  <?= $productInfo['price_total']; ?>
+                    </span>
+                    <span class="yekan" style="font-size: 9pt;">
+تومان
+                    </span>
+                </div>
+
+                <div id="compare">
+                    <span class="yekan compare_btn">
+                        مقایسه کن
+                    </span>
+                    <span style="cursor: pointer;" class="yekan addtocart_btn" >
+                        <i></i>
+                        افزودن به سبد
+                    </span>
+
+                </div>
+            </div>
+            <div class="left"></div>
+
+            <div class="horizental_row"></div>
+
+
+            <style>
+
+
+                .horizental_row {
+                    background: #ccc;
+                    float: right;
+                    height: 1px;
+                    margin: 15px;
+                    width: 86%;
+                    margin-top: -5px;
+                    margin-right: 45px;
+                }
+
+                #sercices-feature {
+                    width: 695px;
+                    background: #fff;
+                    height: 76px;
+                    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.19);
+                    border-radius: 4px;
+                    margin: 7px 0;
+                    overflow: hidden;
+                }
+
+                #sercices-feature ul {
+                    padding: 0;
+                    height: 100%;
+                }
+
+                #sercices-feature ul li {
+                    width: 139px;
+                    float: right;
+                    height: 100%;
+                }
+
+                #sercices-feature ul li a {
+                    display: block;
+                    font-size: 10pt;
+                    height: 100%;
+                    line-height: 72px;
+                    padding: 0 10px;
+                }
+
+                #sercices-feature ul li a i {
+                    display: inline-block;
+                    float: right;
+                    height: 24px;
+                    margin-left: 8px;
+                    margin-top: 22px;
+                    width: 24px;
+                    background: url(images/slices.png) no-repeat;
+                }
+            </style>
+
+            <div id="sercices-feature">
+                <ul>
+                    <li>
+                        <a class="yekan">
+
+                            <i style="background-position: -210px -473px;"></i>
+
+                            7 روز ضمانت بازگشت
+
+                        </a>
+                    </li>
+                    <li>
+                        <a class="yekan">
+
+                            <i style="background-position: -263px -473px;"></i>
+
+                            پرداخت در محل
+                        </a>
+                    </li>
+                    <li>
+                        <a class="yekan">
+
+                            <i style="background-position: -158px -473px;"></i>
+
+                            ضمانت اصل بودن کالا
+                        </a>
+                    </li>
+                    <li>
+                        <a class="yekan">
+
+                            <i style="background-position: -320px -473px;width: 30px;"></i>
+
+                            تحویل اکسپرس
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="yekan">
+
+                            <i style="background-position: -103px -473px;"></i>
+
+                            تضمین بهترین قیمت
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+
+
+        </div>
+
+
+
+
+
+
+
+
+    </div>
+
+         <style>
+
+
+             #introduction {
+                 float: right;
+                 width: 1160px;
+                 margin-top: 20px;
+                 padding: 10px;
+                 height: 300px;
+                 overflow: hidden;
+                 position: relative;
+             }
+
+             #introduction P{
+                 margin: 1px 0;
+                 font-size: 15pt;
+                 text-align: left;
+                 margin-left: 30px;
+             }
+             #introduction .more {
+                 display: block;
+                 font-family: yekan;
+                 font-size: 11pt;
+                 position: absolute;
+                 text-align: center;
+                 bottom: 20px;
+                 width: 100%;
+                 cursor: pointer;
+             }
+
+             #introduction.active {
+                 height: auto !important;
+             }
+         </style>
+         <div id="introduction" style="background: #fff;box-shadow: 0 1px 3px #eee;">
+
+             <p>product short introduction</p>
+             <a class="more">more</a>
+             <p style="font-size: 11pt">there will be description of product and its deatails</p>
+             <p style="font-size: 11pt">there will be description of product and its deatails</p>
+             <p style="font-size: 11pt">there will be description of product and its deatails</p>
+             <p style="font-size: 11pt">there will be description of product and its deatails</p>
+             <p style="font-size: 11pt">there will be description of product and its deatails</p>
+             <p style="font-size: 11pt">there will be description of product and its deatails</p>
+             <p style="font-size: 11pt">there will be description of product and its deatails</p>
+             <p style="font-size: 11pt">there will be description of product and its deatails</p>
+             <p style="font-size: 11pt">there will be description of product and its deatails</p>
+             <p style="font-size: 11pt">there will be description of product and its deatails</p>
+             <p style="font-size: 11pt">there will be description of product and its deatails</p>
+             <p style="font-size: 11pt">there will be description of product and its deatails</p>
+             <p style="font-size: 11pt">there will be description of product and its deatails</p>
+             <p style="font-size: 11pt">there will be description of product and its deatails</p>
+             <p style="font-size: 11pt">there will be description of product and its deatails</p>
+             <p style="font-size: 11pt">there will be description of product and its deatails</p>
+             <p style="font-size: 11pt">there will be description of product and its deatails</p>
+             <p style="font-size: 11pt">there will be description of product and its deatails</p>
+             <p style="font-size: 11pt">there will be description of product and its deatails</p>
+             <p style="font-size: 11pt">there will be description of product and its deatails</p>
+             <p style="font-size: 11pt">there will be description of product and its deatails</p>
+             <p style="font-size: 11pt">there will be description of product and its deatails</p>
+             <p style="font-size: 11pt">there will be description of product and its deatails</p>
+             <p style="font-size: 11pt">there will be description of product and its deatails</p>
+             <p style="font-size: 11pt">there will be description of product and its deatails</p>
+             <p style="font-size: 11pt">there will be description of product and its deatails</p>
+             <p style="font-size: 11pt">there will be description of product and its deatails</p>
+             <p style="font-size: 11pt">there will be description of product and its deatails</p>
+             <p style="font-size: 11pt">there will be description of product and its deatails</p>
+             <p style="font-size: 11pt">there will be description of product and its deatails</p>
+             <p style="font-size: 11pt">there will be description of product and its deatails</p>
+             <p style="font-size: 11pt">there will be description of product and its deatails</p>
+             <p style="font-size: 11pt">there will be description of product and its deatails</p>
+             <p style="font-size: 11pt">there will be description of product and its deatails</p>
+             <p style="font-size: 11pt">there will be description of product and its deatails</p>
+             <p style="font-size: 11pt">there will be description of product and its deatails</p>
+             <p style="font-size: 11pt">there will be description of product and its deatails</p>
+             <p style="font-size: 11pt">there will be description of product and its deatails</p>
+             <p style="font-size: 11pt">there will be description of product and its deatails</p>
+             <p style="font-size: 11pt">there will be description of product and its deatails</p>
+             <p style="font-size: 11pt">there will be description of product and its deatails</p>
+             <p style="font-size: 11pt">there will be description of product and its deatails</p>
+             <p style="font-size: 11pt">there will be description of product and its deatails</p>
+             <p style="font-size: 11pt">there will be description of product and its deatails</p>
+             <p style="font-size: 11pt">there will be description of product and its deatails</p>
+             <p style="font-size: 11pt">there will be description of product and its deatails</p>
+
+
+
+
+         </div>
+
+
+         <style>
+             .sliderscrol{
+                 height: 310px;
+                 width: 1180px;
+                 box-shadow: 0 1px 2px rgba(0, 0, 0, 0.19);
+                 margin-top: 10px;
+                 background: #fff;
+                 border-radius: 4px;
+                 overflow: hidden;
+                 position: relative;
+                 top: 20px
+             }
+             .sliderscrol h3{
+
+
+                 background: #f7f9fa;
+                 height: 35px;
+                 padding-right: 10px;
+                 padding-top: 7px;
+                 font-family: yekan;
+                 font-size: 11.5pt;
+                 margin: 0;
+                 font-weight: normal;
+             }
+
+             .sliderscroll_content {
+                 height: 268px;
+                 width: 100%;
+             }
+             .sliderscrollnext,.sliderscrollprev{
+                 width: 55px;
+                 height: 100%;
+                 float: right;
+             }
+             .sliderscrollmain{
+                 width: 90%;
+                 height: 100%;
+                 float: right;
+                 overflow: hidden;
+             }
+             .sliderscrollprev .prev{
+                 width: 15px;
+                 right: 15px;
+                 height: 42px;
+                 background: url("images/slices.png") no-repeat;
+
+                 background-position: -812px -677px;
+                 display: block;
+                 position: relative;
+                 top: 100px;
+                 cursor: pointer;
+
+             }
+             .border{
+                 border-right: 2px solid rgba(0,0,0,0.4);
+             }
+             .sliderscrollnext .next {
+                 width: 15px;
+                 right: 15px;
+                 height: 42px;
+                 background: url("images/slices.png") no-repeat;
+
+                 background-position: -852px -677px;
+                 display: block;
+                 position: relative;
+                 top: 100px;
+                 cursor: pointer;
+             }
+             .sliderscrol .sliderscrollmain ul{
+                 padding: 0px;
+                 height: 100%;
+                 width: 975px;
+
+             }
+             .sliderscrol .sliderscrollmain ul li{
+                 width: 212.5px;
+                 height: 100%;
+                 float: right;
+                 display: inline-block;
+
+             }
+             .sliderscrol .sliderscrollmain ul li a{
+                 display: block;
+                 height: 100%;
+
+                 text-align: center;
+
+             }
+             .sliderscrol .sliderscrollmain ul li p{
+                 margin-top: 1px;
+                 margin-bottom: 1px;
+
+                 text-align: center;
+                 height: 20px;
+             }
+
+             .sliderscrol .price {
+                 color: green;
+                 font-size: 13pt;
+             }
+
+
+
+
+         </style>
+         <div class="sliderscrol">
+             <h3 >
+                 فقط در دیجی کالا
+             </h3>
+             <div class="sliderscroll_content">
+                 <div class="sliderscrollnext">
+                     <a class="next" onclick="scrollslider('next',this)"></a>
+                 </div>
+                 <div class="sliderscrollmain">
+                     <ul>
+                         <li>
+                             <a>
+                                 <img src="images/sliderscroll_1.jpg">
+                                 <img src="images/exclusive-blue.png">
+                                 <p class="yekan fonts">گوشی سامسونگ</p>
+                                 <p class="yekan price">340,000 ریال</p>
+                             </a>
+                         </li>
+                         <li>
+                             <a>
+                                 <img src="images/sliderscroll2_1.jpg">
+                                 <img src="images/exclusive-blue.png">
+                                 <p class="yekan fonts">گوشی سامسونگ</p>
+                                 <p class="yekan price">1,222,000 ریال</p>
+                             </a>
+                         </li>
+                         <li>
+                             <a>
+                                 <img src="images/sliderscroll2_2.jpg">
+                                 <img src="images/exclusive-blue.png">
+                                 <p class="yekan fonts">گوشی سامسونگ</p>
+                                 <p class="yekan price">520,000 ریال</p>
+                             </a>
+                         </li>
+                         <li>
+                             <a>
+                                 <img src="images/sliderscroll2_3.jpg">
+                                 <img src="images/exclusive-blue.png">
+                                 <p class="yekan fonts">گوشی سامسونگ</p>
+                                 <p class="yekan price">802,000 ریال</p>
+                             </a>
+                         </li>
+                         <li>
+                             <a>
+                                 <img src="images/sliderscroll2_4.jpg">
+                                 <img src="images/exclusive-blue.png">
+                                 <p class="yekan fonts">گوشی سامسونگ</p>
+                                 <p class="yekan price">420,000 ریال</p>
+                             </a>
+                         </li>  <li>
+                             <a>
+                                 <img src="images/sliderscroll2_4.jpg">
+                                 <img src="images/exclusive-blue.png">
+                                 <p class="yekan fonts">گوشی سامسونگ</p>
+                                 <p class="yekan price">420,000 ریال</p>
+                             </a>
+                         </li>  <li>
+                             <a>
+                                 <img src="images/sliderscroll2_4.jpg">
+                                 <img src="images/exclusive-blue.png">
+                                 <p class="yekan fonts">گوشی سامسونگ</p>
+                                 <p class="yekan price">420,000 ریال</p>
+                             </a>
+                         </li>  <li>
+                             <a>
+                                 <img src="images/sliderscroll2_4.jpg">
+                                 <img src="images/exclusive-blue.png">
+                                 <p class="yekan fonts">گوشی سامسونگ</p>
+                                 <p class="yekan price">420,000 ریال</p>
+                             </a>
+                         </li>  <li>
+                             <a>
+                                 <img src="images/sliderscroll2_4.jpg">
+                                 <img src="images/exclusive-blue.png">
+                                 <p class="yekan fonts">گوشی سامسونگ</p>
+                                 <p class="yekan price">420,000 ریال</p>
+                             </a>
+                         </li>  <li>
+                             <a>
+                                 <img src="images/sliderscroll2_4.jpg">
+                                 <img src="images/exclusive-blue.png">
+                                 <p class="yekan fonts">گوشی سامسونگ</p>
+                                 <p class="yekan price">420,000 ریال</p>
+                             </a>
+                         </li>
+                     </ul>
+                 </div>
+                 <div class="sliderscrollprev">
+                     <a class="prev" onclick="scrollslider('prev',this)"></a>
+                 </div>
+             </div>
+
+
+
+
+
+         </div>
+
+         <style>
+             #tab {
+                 width: 1180px;
+                 float: right;
+                 margin-top: 30px;
+margin-bottom: 50px;
+                 padding: 0;
+                 background: whitesmoke;
+                 height: 72px;
+             }
+
+             #tab li {
+
+                 float: right;
+                 padding: 15px;
+                 font-size: 11.5pt;
+                 font-family: yekan;
+                 position: relative;
+                 cursor: pointer;
+               padding-right: 45px;
+
+border-left: 1px solid silver;
+
+
+             }
+             #tab li.active {
+
+                 background: #fff;
+                 border-top: 2px solid blue;
+                 box-shadow: 0 -3px 4px rgba(0, 0, 0, 0.2);
+
+             }
+             #tab li::before {
+
+                 background: url(images/slices.png) no-repeat;
+                 width: 30px;
+                 height: 26px;
+                 content: " ";
+                 display: block;
+                 position: absolute;
+                 right: 3px;
+                 top: 25px;
+
+             }
+
+             #tab .naghd::before {
+                 background-position: -105px -266px;
+             }
+
+             #tab .fanni::before {
+                 background-position: -315px -266px;
+             }
+
+             #tab .nazar::before {
+                 background-position: -261px -266px;
+             }
+
+             #tab .soal::before {
+                 background-position: -210px -266px;
+             }
+
+             #tab .naghd.active::before {
+                 background-position: -105px -308px;
+             }
+
+             #tab .fanni.active::before {
+                 background-position: -315px -308px;
+             }
+
+             #tab .nazar.active::before {
+                 background-position: -261px -308px;
+             }
+
+             #tab .soal.active::before {
+                 background-position: -210px -308px;
+             }
+
+              .section_fanni {
+
+              }
+
+             .section_fanni h4 {
+                 font-size: 13.5pt;
+                 font-family: yekan;
+
+             }
+
+             .section_fanni .row {
+                 width: 100%;
+                 float: right;
+                 margin-bottom: 10px;
+             }
+
+             .section_fanni .row .right {
+                 width: 255px;
+                 float: right;
+                 background: #efefef;
+                 font-family: yekan;
+                 font-size: 10pt;
+                 padding: 5px;
+                 margin-left: 20px;
+                 border-radius: 4px;
+             }
+
+             .section_fanni .row .left {
+                 width: 850px;
+                 float: right;
+                 background: #f7f9fa;
+                 padding: 5px;
+                 font-family: yekan;
+                 font-size: 10pt;
+                 border-radius: 4px;
+
+             }
+         </style>
+
+
+
+         <ul id="tab">
+             <li class="naghd active">
+                 نقد و بررسی تخصصی
+             </li>
+             <li class="fanni">
+                 مشخصات فنی
+             </li>
+             <li class="nazar">
+                 نظرات کاربران
+             </li>
+             <li class="soal">
+                 پرسش و پاسخ
+             </li>
+         </ul>
+
+         <style>
+             #tabchilds {
+                 width: 1180px;
+                 float: right;
+                 background: #fff;
+margin-top: -50px;
+             }
+
+             #tabchilds section {
+                 width: 100%;
+                 display: none;
+                 padding: 10px;
+                 padding-bottom: 20px;
+                 font-family: yekan;
+                 font-size: 12pt;
+                 float: right;
+             }
+
+             #tabchilds section:first-child {
+                 display: block;
+             }
+
+             #tabchilds .item {
+
+                 padding: 0 10px;
+             }
+
+             #tabchilds .item h4 {
+
+                 font-family: yekan;
+                 font-size: 13.5pt;
+                 margin: 0;
+                 position: relative;
+                 padding: 5px 25px 5px 0;
+                 line-height: 40px;
+                 cursor: pointer;
+             }
+
+             #tabchilds .item h4::after {
+
+                 width: 100%;
+                 height: 1px;
+                 background: #eee;
+                 position: absolute;
+                 top: 28px;
+                 left: 0;
+                 content: " ";
+                 display: block;
+             }
+
+             #tabchilds .item:last-child h4::after {
+
+            top: 37px;
+
+             }
+
+             #tabchilds .item h4 span {
+                 z-index: 1;
+                 position: relative;
+                 background: #fff;
+             }
+
+
+             #tabchilds .item h4 i {
+
+                 background: url(images/slices.png) no-repeat -259px -606px;
+                 width: 31px;
+                 height: 56px;
+                 display: block;
+                 position: absolute;
+                 right: -27px;
+                 top: -3px;
+
+             }
+
+             #tabchilds .item h4.active i {
+
+                 background: url(images/slices.png) no-repeat -207px -606px;
+
+             }
+
+             #tabchilds .item:first-child h4 i {
+
+                 background: url(images/slices.png) no-repeat -153px -615px;
+                 width: 31px;
+                 height: 44px;
+                 display: block;
+                 position: absolute;
+                 right: -26px;
+                 top: -3px;
+             }
+
+             #tabchilds .item:first-child h4.active i {
+
+                 background: url(images/slices.png) no-repeat -98px -615px;
+
+             }
+
+             #tabchilds .item:last-child h4 span {
+
+                 position: relative;
+                 top: 10px;
+             }
+
+             #tabchilds .item:last-child h4 i {
+
+                 background: rgba(0, 0, 0, 0) url("images/slices.png") no-repeat scroll -313px -615px;
+                 display: block;
+                 height: 44px;
+                 position: absolute;
+                 right: -27px;
+                 top: 12px;
+                 width: 31px;
+                 line-height: 10px;
+
+             }
+
+             #tabchilds .item:last-child h4.active i {
+
+                 background: url(images/slices.png) no-repeat -207px -606px;
+
+             }
+
+             .itemcontainer {
+                 margin-right: 20px;
+                 border-right: 3px solid #f0f1f2;
+             }
+
+             .itemcontainer .item .description {
+                 display: none;
+             }
+
+         </style>
+
+         <div id="tabchilds">
+
+
+             <section>
+
+
+
+                 <div class="itemcontainer">
+                 <div class="item">
+
+                     <h4 >
+                         <i></i>
+                         <span> design and function</span>
+                     </h4>
+                     <div class="description">
+                     <p>
+                         script
+                         script
+                         script
+
+                     </p> <p>
+                         script
+                         script
+                         script
+
+                     </p> <p>
+                         script
+                         script
+                         script
+
+                     </p> <p>
+                         script
+                         script
+                         script
+
+                     </p> <p>
+                         script
+                         script
+                         script
+
+                     </p> <p>
+                         script
+                         script
+                         script
+
+                     </p> <p>
+                         script
+                         script
+                         script
+
+                     </p> <p>
+                         script
+                         script
+                         script
+
+                     </p>
+                     </div>
+
+
+                 </div>
+                 <div class="item">
+
+                     <h4>
+                         <i></i>
+                        <span> screen</span>
+                     </h4>
+
+                     <div class="description">
+                     <p>
+                         script
+                         script
+                         script
+
+                     </p> <p>
+                     script
+                     script
+                     script
+
+                 </p> <p>
+                     script
+                     script
+                     script
+
+                 </p> <p>
+                     script
+                     script
+                     script
+
+                 </p> <p>
+                     script
+                     script
+                     script
+
+                 </p>
+                     </div>
+                 </div>
+                     <div class="item">
+
+                     <h4>
+                         <i></i>
+                       <span>  hardwear adn batter ie</span>
+                     </h4>
+                 </div>
+                 <div class="item">
+                     <h4>
+                         <i></i>
+                        <span> review</span>
+                     </h4>
+                 </div>
+                 </div>
+             </section>
+
+             <section class="section_fanni">
+                 tab 2
+
+                 <h4> physical features</h4>
+                 <div class="row"><div class="right"> size</div><div class="left">200mm*550mm</div> </div>
+                 <div class="row"><div class="right"> weight</div><div class="left">200gr</div> </div>
+                 <h4> procesore</h4>
+                 <div class="row"><div class="right"> size</div><div class="left">200mm*550mm</div></div>
+                 <div class="row"><div class="right"> size</div><div class="left">200mm*550mm</div></div>
+                 <div class="row"><div class="right"> size</div><div class="left">200mm*550mm</div> </div>
+             </section>
+
+             <section>
+                 tab 3
+                 <style>
+                     #comments_result {
+                         width: 510px;
+                         float: right;
+                     }
+
+                     #comments_send {
+                         float: right;
+                         margin-right: 10px;
+                         width: 630px;
+                     }
+
+                     .navbar .row {
+                         width: 100%;
+                         float: right;
+                     }
+
+                     .navbar .row .title {
+                         font-size: 10.3pt;
+                         float: right;
+                         width: 155px;
+                         display: block;
+                     }
+
+                     .navbar ul {
+                         padding: 0;
+                         height: 10px;
+                         float: right;
+                         margin-right: 10px;
+                         margin-top: 10px;
+
+                     }
+
+                     .navbar ul li {
+                         width: 64px;
+                         height: 100%;
+                         float: right;
+                         background: #eee;
+                         border-left: 1px solid #fff;
+padding-left: 3px;
+                     }
+
+                     .navbar ul li span {
+                         display: block;
+                         height: 100%;
+                         background: green;
+                     }
+
+
+                     .navbar ul li span.full {
+                         width: 20%;
+                     }
+
+
+                 </style>
+                 <div id="comments_result" class="navbar">
+                     <p>
+                         users vote on :
+                         <span>
+                         samsung galexy s5
+                     </span>
+
+                          <div class="row">
+                     <span class="title">
+                         ارزش خرید به نسبت قیمت
+                     </span>
+                     <ul class="">
+                         <li>
+                             <span></span>
+                         </li>
+                         <li>
+                             <span></span>
+                         </li>
+                         <li></li>
+                         <li></li>
+                         <li> </li>
+                     </ul>
+                 </div>
+                     <div class="row">
+                     <span class="title">
+                         ارزش خرید به نسبت قیمت
+                     </span>
+                     <ul class="">
+                         <li>
+                             <span></span>
+                         </li>
+                         <li><span></span></li>
+                         <li></li>
+                         <li></li>
+                         <li> </li>
+                     </ul>
+                 </div>       <div class="row">
+                     <span class="title">
+                         ارزش خرید به نسبت قیمت
+                     </span>
+                     <ul class="">
+                         <li>
+                             <span></span>
+                         </li>
+                         <li><span></span></li>
+                         <li></li>
+                         <li></li>
+                         <li> </li>
+                     </ul>
+                 </div>
+                     <div class="row">
+                     <span class="title">
+                         ارزش خرید به نسبت قیمت
+                     </span>
+                     <ul class="">
+                         <li>
+                             <span></span>
+                         </li>
+                         <li><span></span></li>
+                         <li></li>
+                         <li></li>
+                         <li> </li>
+                     </ul>
+                 </div>
+                     </p>
+                 </div>
+                 <div id="comments_send" >
+                     <p style="font-size: 14pt; font-weight: bold">you can send your opinion too</p>
+                     <p>you can shair you idia about our website and sail methods we will thank you so much</p>
+                 </div>
+                 <div class="email">
+
+
+                     <span class="btn">
+                        sending comment
+                    </span>
+                 </div>
+
+                 <style>
+                     #comments {
+                         float: right;
+                         width: 98%;
+                     }
+
+                     #comments .comment {
+                         float: right;
+                         width: 100%;
+                         box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
+                         border-radius: 2px;
+                         overflow: hidden;
+                         margin-bottom: 8px;
+
+                     }
+
+                     #comments .comment .comment_header {
+                         height: 65px;
+                         background: #eee;
+                         font-family: yekan;
+                         padding: 0 15px;
+                     }
+
+                     #comments .comment .comment_header .right {
+
+                         float: right;
+                     }
+
+                     #comments .comment .comment_header .left {
+
+                         float: left;
+                     }
+
+                     #comments .comment .comment_header .right span {
+                         display: block;
+                         margin-top: 10px ;
+                     }
+
+                     #comments .comment .comment_header .left span {
+                         float: left;
+                         display: block;
+                         margin-right: 8px;
+                         font-size: 10.6pt;
+                         margin-top: 13px;
+                     }
+
+                     #comments .comment .comment_header .left .like {
+                         width: 65px;
+                         height: 25px;
+                         background: #fff;
+                     }
+
+                     #comments .comment .comment_header .left .like span {
+                         margin: 0;
+                         margin-left: 20px;
+                         margin-top: 2px;
+
+
+                     }
+
+                     #comments .comment .comment_header .left .like i {
+                         width: 20px;
+                         height: 20px;
+                         display: block;
+                         float: right;
+                         margin-right: 3px;
+                         margin-top: 4px;
+                         background: url(images/slices.png) no-repeat -305px -190px;
+                     }
+
+                     #comments .comment .comment_header .left .dislike {
+                         width: 65px;
+                         height: 25px;
+                         background: #fff;
+                     }
+
+                     #comments .comment .comment_header .left .dislike span {
+                         margin: 0;
+
+                         margin-left: 20px;
+                         margin-top: 2px
+                     }
+
+                     #comments .comment .comment_header .left .dislike i {
+                         width: 20px;
+                         height: 20px;
+                         display: block;
+                         float: right;
+                         margin-right: 3px;
+                         margin-top: 4px;
+                         background: url(images/slices.png) no-repeat -267px -193px;
+                     }
+
+                 </style>
+
+                 <div id="comments">
+                     <p>
+                         users comments
+                     </p>
+                     <div class="horizental_row"></div>
+                     <div class="comment">
+                         <div class="comment_header">
+                             <div class="right">
+                                 <?php
+        $slider2=$data[1];
+
+        foreach ($slider2 as $row) {
+            ?>        <span class="name" style="font-size: 12.8pt;">
+                                کلیک سایت
+                            </span>
+                                 <span class="date" style="font-size: 9pt;">
+ 22 تیر 1398
+                        </span>
+                             </div>
+                             <div class="left">
+                            <span class="dislike">
+  <i></i>
+                                <span>
+                                8
+                                </span>
+                            </span>
+                                 <span class="like">
+
+                                <i></i>
+                                <span>
+                                   20
+                                </span>
+                            </span>
+                                 <span>
+                                آیا این نظر مفید بود؟
+                            </span>
+                             </div>
+                         </div>
+
+                         <style>
+
+                             #comments .comment .comment_content .left {
+
+                                 width: 730px;
+                                 float: left;
+                             }
+
+                             #comments .comment .comment_content .left .top {
+                                 font-size: 13.3pt;
+                             }
+
+                             #comments .comment .comment_content .left .center {
+                                 float: right;
+                                 width: 100%;
+                             }
+
+                             #comments .comment .comment_content .left .bottom {
+                                 font-size: 11pt;
+                             }
+
+                             .ghovat {
+                                 width: 260px;
+                                 float: right;
+                                 font-size: 10.5pt;
+                             }
+
+                             .zaaf {
+                                 width: 260px;
+                                 float: right;
+                                 margin-right: 15px;
+                                 font-size: 10.5pt;
+                             }
+
+                             #comments .comment .comment_content {
+                                 float: right;
+                                 padding: 10px;
+                                 width: 98%;
+                             }
+
+                             #comments .comment .comment_content .right {
+                                 float: right;
+                                 width: 400px;
+                             }
+                         </style>
+                         <div class="comment_content">
+                             <div class="right">
+
+                                 <div class="navbar">
+
+
+
+                                     <div class="row">
+                    <span class="title">
+creativity
+                    </span>
+                                         <ul>
+
+                                             <li>
+                                                 <span class="full"></span>
+                                             </li>
+
+                                             <li>
+                                             </li>
+
+
+                                         </ul>
+                                     </div>         <div class="row">
+                    <span class="title">
+creativity
+                    </span>
+                                         <ul>
+
+                                             <li>
+                                                 <span class="full"></span>
+                                             </li>
+
+                                             <li>
+                                             </li>
+
+
+                                         </ul>
+                                     </div>         <div class="row">
+                    <span class="title">
+creativity
+                    </span>
+                                         <ul>
+
+                                             <li>
+                                                 <span class="full"></span>
+                                             </li>
+
+                                             <li>
+                                             </li>
+
+
+                                         </ul>
+                                     </div>         <div class="row">
+                    <span class="title">
+creativity
+                    </span>
+                                         <ul>
+
+                                             <li>
+                                                 <span class="full"></span>
+                                             </li>
+
+                                             <li>
+                                             </li>
+
+
+                                         </ul>
+                                     </div>
+
+
+
+
+
+                                 </div>
+
+
+
+
+
+                                 </div>
+
+
+
+
+
+                             <div class="left">
+
+                                 <div class="top">
+                                     i enjoy its speed adn quality
+                                 </div>
+
+                                 <div class="center">
+                                     <div class="ghovat">
+                                         <p style="color: green;">
+                                             posetive
+                                         </p>
+                                         <p>
+its speed
+                                         </p>
+                                     </div>
+                                     <div class="zaaf">
+                                         <p style="color: red;">
+                                             negetive
+                                         </p>
+                                         <p>
+battery usage
+                                         </p>
+                                     </div>
+                                 </div>
+
+                                 <div class="bottom">
+                                     comment script:i bought it it was nice and .....
+                                 </div>
+
+                             </div>
+
+                             </div>
+                         </div>
+                     <div class="comment">
+                         <div class="comment_header">
+                             <div class="right">
+                            <span class="name" style="font-size: 12.8pt;">
+                                کلیک سایت
+                            </span>
+                                 <span class="date" style="font-size: 9pt;">
+ 22 تیر 1398
+                        </span>
+                             </div>
+                             <div class="left">
+                            <span class="dislike">
+  <i></i>
+                                <span>
+                                8
+                                </span>
+                            </span>
+                                 <span class="like">
+
+                                <i></i>
+                                <span>
+                                   20
+                                </span>
+                            </span>
+                                 <span>
+                                آیا این نظر مفید بود؟
+                            </span>
+                             </div>
+                         </div>
+
+                         <style>
+
+                             #comments .comment .comment_content .left {
+
+                                 width: 730px;
+                                 float: left;
+                             }
+
+                             #comments .comment .comment_content .left .top {
+                                 font-size: 13.3pt;
+                             }
+
+                             #comments .comment .comment_content .left .center {
+                                 float: right;
+                                 width: 100%;
+                             }
+
+                             #comments .comment .comment_content .left .bottom {
+                                 font-size: 11pt;
+                             }
+
+                             .ghovat {
+                                 width: 260px;
+                                 float: right;
+                                 font-size: 10.5pt;
+                             }
+
+                             .zaaf {
+                                 width: 260px;
+                                 float: right;
+                                 margin-right: 15px;
+                                 font-size: 10.5pt;
+                             }
+
+                             #comments .comment .comment_content {
+                                 float: right;
+                                 padding: 10px;
+                                 width: 98%;
+                             }
+
+                             #comments .comment .comment_content .right {
+                                 float: right;
+                                 width: 400px;
+                             }
+                         </style>
+                         <div class="comment_content">
+                             <div class="right">
+
+                                 <div class="navbar">
+
+
+
+                                     <div class="row">
+                    <span class="title">
+creativity
+                    </span>
+                                         <ul>
+
+                                             <li>
+                                                 <span class="full"></span>
+                                             </li>
+
+                                             <li>
+                                             </li>
+
+
+                                         </ul>
+                                     </div>         <div class="row">
+                    <span class="title">
+creativity
+                    </span>
+                                     <ul>
+
+                                         <li>
+                                             <span class="full"></span>
+                                         </li>
+
+                                         <li>
+                                         </li>
+
+
+                                     </ul>
+                                 </div>         <div class="row">
+                    <span class="title">
+creativity
+                    </span>
+                                     <ul>
+
+                                         <li>
+                                             <span class="full"></span>
+                                         </li>
+
+                                         <li>
+                                         </li>
+
+
+                                     </ul>
+                                 </div>         <div class="row">
+                    <span class="title">
+creativity
+                    </span>
+                                     <ul>
+
+                                         <li>
+                                             <span class="full"></span>
+                                         </li>
+
+                                         <li>
+                                         </li>
+
+
+                                     </ul>
+                                 </div>
+
+
+
+
+
+                                 </div>
+
+
+
+
+
+                             </div>
+
+
+
+
+
+                             <div class="left">
+
+                                 <div class="top">
+                                     i enjoy its speed adn quality
+                                 </div>
+
+                                 <div class="center">
+                                     <div class="ghovat">
+                                         <p style="color: green;">
+                                             posetive
+                                         </p>
+                                         <p>
+                                             its speed
+                                         </p>
+                                     </div>
+                                     <div class="zaaf">
+                                         <p style="color: red;">
+                                             negetive
+                                         </p>
+                                         <p>
+                                             battery usage
+                                         </p>
+                                     </div>
+                                 </div>
+
+                                 <div class="bottom">
+                                     comment script:i bought it it was nice and .....
+                                 </div>
+
+                             </div>
+
+                         </div>
+
+
+                     </div>
+                     <div class="comment">
+                         <div class="comment_header">
+                             <div class="right">
+                            <span class="name" style="font-size: 12.8pt;">
+                                کلیک سایت
+                            </span>
+                                 <span class="date" style="font-size: 9pt;">
+ 22 تیر 1398
+                        </span>
+                             </div>
+                             <div class="left">
+                            <span class="dislike">
+  <i></i>
+                                <span>
+                                8
+                                </span>
+                            </span>
+                                 <span class="like">
+
+                                <i></i>
+                                <span>
+                                   20
+                                </span>
+                            </span>
+                                 <span>
+                                آیا این نظر مفید بود؟
+                            </span>
+                             </div>
+                         </div>
+
+                         <style>
+
+                             #comments .comment .comment_content .left {
+
+                                 width: 730px;
+                                 float: left;
+                             }
+
+                             #comments .comment .comment_content .left .top {
+                                 font-size: 13.3pt;
+                             }
+
+                             #comments .comment .comment_content .left .center {
+                                 float: right;
+                                 width: 100%;
+                             }
+
+                             #comments .comment .comment_content .left .bottom {
+                                 font-size: 11pt;
+                             }
+
+                             .ghovat {
+                                 width: 260px;
+                                 float: right;
+                                 font-size: 10.5pt;
+                             }
+
+                             .zaaf {
+                                 width: 260px;
+                                 float: right;
+                                 margin-right: 15px;
+                                 font-size: 10.5pt;
+                             }
+
+                             #comments .comment .comment_content {
+                                 float: right;
+                                 padding: 10px;
+                                 width: 98%;
+                             }
+
+                             #comments .comment .comment_content .right {
+                                 float: right;
+                                 width: 400px;
+                             }
+                         </style>
+                         <div class="comment_content">
+                             <div class="right">
+
+                                 <div class="navbar">
+
+
+
+                                     <div class="row">
+                    <span class="title">
+creativity
+                    </span>
+                                         <ul>
+
+                                             <li>
+                                                 <span class="full"></span>
+                                             </li>
+
+                                             <li>
+                                             </li>
+
+
+                                         </ul>
+                                     </div>         <div class="row">
+                    <span class="title">
+creativity
+                    </span>
+                                     <ul>
+
+                                         <li>
+                                             <span class="full"></span>
+                                         </li>
+
+                                         <li>
+                                         </li>
+
+
+                                     </ul>
+                                 </div>         <div class="row">
+                    <span class="title">
+creativity
+                    </span>
+                                     <ul>
+
+                                         <li>
+                                             <span class="full"></span>
+                                         </li>
+
+                                         <li>
+                                         </li>
+
+
+                                     </ul>
+                                 </div>         <div class="row">
+                    <span class="title">
+creativity
+                    </span>
+                                     <ul>
+
+                                         <li>
+                                             <span class="full"></span>
+                                         </li>
+
+                                         <li>
+                                         </li>
+
+
+                                     </ul>
+                                 </div>
+
+
+
+
+
+                                 </div>
+
+
+
+
+
+                             </div>
+
+
+
+
+
+                             <div class="left">
+
+                                 <div class="top">
+                                     i enjoy its speed adn quality
+                                 </div>
+
+                                 <div class="center">
+                                     <div class="ghovat">
+                                         <p style="color: green;">
+                                             posetive
+                                         </p>
+                                         <p>
+                                             its speed
+                                         </p>
+                                     </div>
+                                     <div class="zaaf">
+                                         <p style="color: red;">
+                                             negetive
+                                         </p>
+                                         <p>
+                                             battery usage
+                                         </p>
+                                     </div>
+                                 </div>
+
+                                 <div class="bottom">
+                                     comment script:i bought it it was nice and .....
+                                 </div>
+
+                             </div>
+
+                         </div>
+
+                     </div>
+                     <div class="comment">
+                         <div class="comment_header">
+                             <div class="right">
+                            <span class="name" style="font-size: 12.8pt;">
+                                کلیک سایت
+                            </span>
+                                 <span class="date" style="font-size: 9pt;">
+ 22 تیر 1398
+                        </span>
+                             </div>
+                             <div class="left">
+                            <span class="dislike">
+  <i></i>
+                                <span>
+                                8
+                                </span>
+                            </span>
+                                 <span class="like">
+
+                                <i></i>
+                                <span>
+                                   20
+                                </span>
+                            </span>
+                                 <span>
+                                آیا این نظر مفید بود؟
+                            </span>
+                             </div>
+                         </div>
+
+                         <style>
+
+                             #comments .comment .comment_content .left {
+
+                                 width: 730px;
+                                 float: left;
+                             }
+
+                             #comments .comment .comment_content .left .top {
+                                 font-size: 13.3pt;
+                             }
+
+                             #comments .comment .comment_content .left .center {
+                                 float: right;
+                                 width: 100%;
+                             }
+
+                             #comments .comment .comment_content .left .bottom {
+                                 font-size: 11pt;
+                             }
+
+                             .ghovat {
+                                 width: 260px;
+                                 float: right;
+                                 font-size: 10.5pt;
+                             }
+
+                             .zaaf {
+                                 width: 260px;
+                                 float: right;
+                                 margin-right: 15px;
+                                 font-size: 10.5pt;
+                             }
+
+                             #comments .comment .comment_content {
+                                 float: right;
+                                 padding: 10px;
+                                 width: 98%;
+                             }
+
+                             #comments .comment .comment_content .right {
+                                 float: right;
+                                 width: 400px;
+                             }
+                         </style>
+                         <div class="comment_content">
+                             <div class="right">
+
+                                 <div class="navbar">
+
+
+
+                                     <div class="row">
+                    <span class="title">
+creativity
+                    </span>
+                                         <ul>
+
+                                             <li>
+                                                 <span class="full"></span>
+                                             </li>
+
+                                             <li>
+                                             </li>
+
+
+                                         </ul>
+                                     </div>         <div class="row">
+                    <span class="title">
+creativity
+                    </span>
+                                     <ul>
+
+                                         <li>
+                                             <span class="full"></span>
+                                         </li>
+
+                                         <li>
+                                         </li>
+
+
+                                     </ul>
+                                 </div>         <div class="row">
+                    <span class="title">
+creativity
+                    </span>
+                                     <ul>
+
+                                         <li>
+                                             <span class="full"></span>
+                                         </li>
+
+                                         <li>
+                                         </li>
+
+
+                                     </ul>
+                                 </div>         <div class="row">
+                    <span class="title">
+creativity
+                    </span>
+                                     <ul>
+
+                                         <li>
+                                             <span class="full"></span>
+                                         </li>
+
+                                         <li>
+                                         </li>
+
+
+                                     </ul>
+                                 </div>
+
+
+
+
+
+                                 </div>
+
+
+
+
+
+                             </div>
+
+
+
+
+
+                             <div class="left">
+
+                                 <div class="top">
+                                     i enjoy its speed adn quality
+                                 </div>
+
+                                 <div class="center">
+                                     <div class="ghovat">
+                                         <p style="color: green;">
+                                             posetive
+                                         </p>
+                                         <p>
+                                             its speed
+                                         </p>
+                                     </div>
+                                     <div class="zaaf">
+                                         <p style="color: red;">
+                                             negetive
+                                         </p>
+                                         <p>
+                                             battery usage
+                                         </p>
+                                     </div>
+                                 </div>
+
+                                 <div class="bottom">
+                                     comment script:i bought it it was nice and .....
+                                 </div>
+
+                             </div>
+
+                         </div>
+                     </div>
+                     <div class="comment">
+                         <div class="comment_header">
+                             <div class="right">
+                            <span class="name" style="font-size: 12.8pt;">
+                                کلیک سایت
+                            </span>
+                                 <span class="date" style="font-size: 9pt;">
+ 22 تیر 1398
+                        </span>
+                             </div>
+                             <div class="left">
+                            <span class="dislike">
+  <i></i>
+                                <span>
+                                8
+                                </span>
+                            </span>
+                                 <span class="like">
+
+                                <i></i>
+                                <span>
+                                   20
+                                </span>
+                            </span>
+                                 <span>
+                                آیا این نظر مفید بود؟
+                            </span>
+                             </div>
+                         </div>
+
+                         <style>
+
+                             #comments .comment .comment_content .left {
+
+                                 width: 730px;
+                                 float: left;
+                             }
+
+                             #comments .comment .comment_content .left .top {
+                                 font-size: 13.3pt;
+                             }
+
+                             #comments .comment .comment_content .left .center {
+                                 float: right;
+                                 width: 100%;
+                             }
+
+                             #comments .comment .comment_content .left .bottom {
+                                 font-size: 11pt;
+                             }
+
+                             .ghovat {
+                                 width: 260px;
+                                 float: right;
+                                 font-size: 10.5pt;
+                             }
+
+                             .zaaf {
+                                 width: 260px;
+                                 float: right;
+                                 margin-right: 15px;
+                                 font-size: 10.5pt;
+                             }
+
+                             #comments .comment .comment_content {
+                                 float: right;
+                                 padding: 10px;
+                                 width: 98%;
+                             }
+
+                             #comments .comment .comment_content .right {
+                                 float: right;
+                                 width: 400px;
+                             }
+                         </style>
+                         <div class="comment_content">
+                             <div class="right">
+
+                                 <div class="navbar">
+
+
+
+                                     <div class="row">
+                    <span class="title">
+creativity
+                    </span>
+                                         <ul>
+
+                                             <li>
+                                                 <span class="full"></span>
+                                             </li>
+
+                                             <li>
+                                             </li>
+
+
+                                         </ul>
+                                     </div>         <div class="row">
+                    <span class="title">
+creativity
+                    </span>
+                                     <ul>
+
+                                         <li>
+                                             <span class="full"></span>
+                                         </li>
+
+                                         <li>
+                                         </li>
+
+
+                                     </ul>
+                                 </div>         <div class="row">
+                    <span class="title">
+creativity
+                    </span>
+                                     <ul>
+
+                                         <li>
+                                             <span class="full"></span>
+                                         </li>
+
+                                         <li>
+                                         </li>
+
+
+                                     </ul>
+                                 </div>         <div class="row">
+                    <span class="title">
+creativity
+                    </span>
+                                     <ul>
+
+                                         <li>
+                                             <span class="full"></span>
+                                         </li>
+
+                                         <li>
+                                         </li>
+
+
+                                     </ul>
+                                 </div>
+
+
+
+
+
+                                 </div>
+
+
+
+
+
+                             </div>
+
+
+
+
+
+                             <div class="left">
+
+                                 <div class="top">
+                                     i enjoy its speed adn quality
+                                 </div>
+
+                                 <div class="center">
+                                     <div class="ghovat">
+                                         <p style="color: green;">
+                                             posetive
+                                         </p>
+                                         <p>
+                                             its speed
+                                         </p>
+                                     </div>
+                                     <div class="zaaf">
+                                         <p style="color: red;">
+                                             negetive
+                                         </p>
+                                         <p>
+                                             battery usage
+                                         </p>
+                                     </div>
+                                 </div>
+
+                                 <div class="bottom">
+                                     comment script:i bought it it was nice and .....
+                                 </div>
+
+                             </div>
+
+                         </div>
+
+
+
+                 </div>
+
+             </section>
+
+             <section id="questions">
+                 <style>
+
+                     #questions {
+                         font-family: yekan;
+                     }
+
+                     #questions h4 {
+                         font-size: 12.8pt;
+                     }
+
+                     #question_matn {
+                         border: 1px solid #ccc;
+                         border-radius: 4px;
+                         height: 190px;
+                         width: 98%;
+                     }
+
+                     .row {
+                         float: right;
+                         width: 100%;
+                     }
+
+                     .question .question_header {
+                         height: 35px;
+                         background: #ccc;
+
+                     }
+
+                     .question .question_header i {
+                         float: right;
+                         margin-right: 7px;
+                         background: url(images/slices.png) no-repeat -284px -126px;
+                         width: 24px;
+                         height: 24px;
+                         display: block;
+                         margin-top: 6px;
+
+                     }
+
+                     .question .question_header .title {
+                         float: right;
+                         font-size: 10pt;
+                         margin-right: 6px;
+                         margin-top: 3px;
+
+                     }
+
+                     .question .question_header .name {
+                         float: left;
+                         font-size: 10pt;
+                         margin-right: 6px;
+                         margin-top: 3px;
+
+                     }
+
+                     .question .question_header .date {
+                         float: left;
+                         font-size: 10pt;
+                         margin-left: 6px;
+                         margin-top: 3px;
+                         line-height: 23px;
+
+                     }
+
+                     .question .question_content {
+
+                         background: #eee;
+                         padding: 10px;
+
+                     }
+
+                     #questions_container {
+                         width: 98%;
+                     }
+
+                     .question_content p {
+                         font-size: 11.5pt;
+                     }
+
+                     #questions .question {
+                         box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
+                         border-radius: 3px;
+                         overflow: hidden;
+                         margin-bottom: 8px;
+                     }
+
+                     .answer {
+                         padding: 10px;
+                         background: #fff;
+                         font-size: 11pt;
+                     }
+
+                 </style>
+
+                 <h4>
+                     پرسش خود را مطرح نمایید
+                 </h4>
+
+
+                 <textarea id="question_matn">
+
+                </textarea>
+
+                 <div class="row">
+
+                     <div class="email" style="text-align: left;">
+                    <span class="btn btn_green" style="float: left;margin-left: 20px;">
+ثبت پرسش
+                    </span>
+                     </div>
+                 </div>
+                 <h4>
+                     answers and quetions
+                 </h4>
+
+
+                 <div class="horizental_row" style="margin-top: 15px"></div>
+
+
+                 <div id="questions_container" class="row">
+
+
+
+
+                     <div class="question">
+                         <div class="question_header">
+
+                             <i></i>
+                             <span class="title">
+                            پرسش
+                        </span>
+
+                             <span class="date"> 20-10-220
+                        </span>
+
+                             <span class="name">
+
+     کلیک سایت
+                        -
+                        </span>
+
+
+                         </div>
+
+                         <div class="question_content">
+
+                             <p>
+hi i wana know how long its battery will work maximun
+                             </p>
+
+                         </div>
+
+                         <div class="answer">
+                             <p style="margin-top: 2px;">
+                                 پاسخ: <span>it wis</span>
+                             </p>
+
+
+
+                         </div>
+
+                     </div>
+
+
+                     <div class="question">
+                         <div class="question_header">
+
+                             <i></i>
+                             <span class="title">
+                            پرسش
+                        </span>
+
+                             <span class="date"> 20-10-220
+                        </span>
+
+                             <span class="name">
+
+     کلیک سایت
+                        -
+                        </span>
+
+
+                         </div>
+
+                         <div class="question_content">
+
+                             <p>
+                                 hi i wana know how long its battery will work maximun
+                             </p>
+
+                         </div>
+
+                         <div class="answer">
+                             <p style="margin-top: 2px;">
+                                 پاسخ: <span>it wis</span>
+                             </p>
+
+
+
+                         </div>
+
+                     </div>
+
+                     <div class="question">
+                         <div class="question_header">
+
+                             <i></i>
+                             <span class="title">
+                            پرسش
+                        </span>
+
+                             <span class="date"> 20-10-220
+                        </span>
+
+                             <span class="name">
+
+     کلیک سایت
+                        -
+                        </span>
+
+
+                         </div>
+
+                         <div class="question_content">
+
+                             <p>
+                                 hi i wana know how long its battery will work maximun
+                             </p>
+
+                         </div>
+
+                         <div class="answer">
+                             <p style="margin-top: 2px;">
+                                 پاسخ: <span>it wis</span>
+                             </p>
+
+
+
+                         </div>
+
+                     </div>
+
+                 </div>
+             </section>
+
+
+
+             </section>
+
+
+
+             <script>
+                 $('#tab li').click(function () {
+                     $('#tab li').removeClass('active');
+                     $('#tabchilds section').fadeOut(200);
+                     var index=$(this).index();
+                     $('#tabchilds section').eq(index).fadeIn(200);
+
+                     $(this).addClass('active');
+
+                 })
+
+
+
+                 $('.itemcontainer .item h4').click(function () {
+                     var items=$(this).parents('.item');
+                     $(this).toggleClass('active');
+                     $('.description',items).slideToggle(200);
+
+                 })
+             </script>
+
+
+
+         </div>
+     </div>
+
+
+
+
+         <script>
+
+                 $('#introduction .more').click(function () {
+
+                     $('#introduction').toggleClass('active');
+                 });
+
+             </script>
+
+
+        <script>
+
+
+            $('#selectlist').click(function () {
+
+                var ultag=$('ul',this);
+                ultag.slideToggle(200);
+
+            });
+            $('#selectlist ul li').click(function () {
+           var txt=$(this).text();
+           $('#selectlist .zamanattitle').text(txt);
+
+
+            });
+
+
+            $('.colors li').click(function () {
+                $('.circle').removeClass('active');
+                $('.circle',this).addClass('active');
+
+
+            })
+        $('.flipTimer').flipTimer({
+
+            direction: 'down',
+            date: 'november 02,2020 20:35:41',
+            callback: function () {
+                $('.slider2_content_right').css('opacity', .4);
+                $('.slider2_content_left').css('opacity', .4);
+                $(".slider2_finished").fadeIn(200);
+            }
+        });
+    </script>
+
+
+
+
+</div>
+
+</div>
+
+
+
+
+<script>
+
+
+
+
+
+
+
+
+
+
+    function scrollslider(direction,tag) {
+
+        var a_tag=$(tag);
+        var scrolltag=a_tag.parents(".sliderscrol");
+        var scrollsliderUl=scrolltag.find('.sliderscrollmain ul');
+        var scrollsliderli=scrollsliderUl.find('li');
+        var scrollsliderlinum=scrollsliderli.length;
+        var scrollslidernum=Math.ceil(scrollsliderlinum/5);
+        var  maxmarginright=-(scrollslidernum-1)*1062;
+        var marginRightOld=scrollsliderUl.css('margin-right');
+        marginRightOld=parseFloat(marginRightOld);
+        var marginRightnew;
+        scrollsliderUl.css('width',scrollsliderlinum * 212.4);
+
+        if (direction == 'next'){
+
+            marginRightnew=marginRightOld+1062;
+
+
+
+
+        }if(direction == 'prev'){
+            marginRightnew=marginRightOld-1062;
+
+
+
+
+        }
+        if (marginRightnew < maxmarginright){
+            marginRightnew=0;
+        }
+        if (marginRightnew > 0){
+            marginRightnew=maxmarginright;
+        }
+
+        scrollsliderUl.animate({'marginRight':marginRightnew},1500);
+
+    }
+
+    $('.prev').click(function () {
+        scrollslider('prev');
+
+    });
+    $('.next').click(function () {
+        scrollslider('next');
+
+
+    });
+    $('.prev').click(function () {
+        $('.sliderscrollprev').addClass('.border')
+    })
+
+
+
+
+
+    var slidertag2=$('#slider2');
+    var slideritems2=slidertag2.find('.item');
+    var nextslide2=1;
+    var numslides2=slideritems2.length;
+    var slidernav2=slidertag2.find("#navslider2 ul li");
+    var timeout=3000;
+
+
+    function slider2() {
+        if (nextslide2>numslides2){
+
+            nextslide2=1;
+        }if(nextslide2<1){
+            nextslide2=numslides2
+        }
+
+        slideritems2.hide();
+        slideritems2.eq(nextslide2-1).fadeIn(100);
+        slidernav2.removeClass('active');
+        slidernav2.eq(nextslide2-1).addClass('active');
+        nextslide2++;
+    }
+
+    function goslide2(index) {
+        nextslide2=index;
+        slider2();
+    }
+    $('#slider2 #navslider2 li').hover(function () {
+        clearInterval(sliderinterval2);
+        var index=$(this).index();
+        goslide2(index+1);
+
+    },function () {
+
+    })
+
+
+    slider2();
+    var sliderinterval2=setInterval(slider2,timeout);
+    slidertag2.mouseleave(function () {
+        clearInterval(sliderinterval2);
+        sliderinterval2=setInterval(slider2,timeout);
+
+    })
+
+    var timer={};
+
+    var slidertag=$('#slider');
+    var slideritems=slidertag.find('.item');
+    var nextslide=1;
+    var numslides=slideritems.length;
+    var slidernav=slidertag.find("#slidernav ul li");
+    var timeout=3000;
+
+
+    function slider() {
+        if (nextslide>numslides){
+
+            nextslide=1;
+        }
+
+        slideritems.hide();
+        slideritems.eq(nextslide-1).fadeIn(100);
+        slidernav.removeClass('active');
+        slidernav.eq(nextslide-1).addClass('active');
+        nextslide++;
+    }
+    function gonext() {
+        slider();
+    }
+    function goprev() {
+        slider();
+
+    }
+
+    function goslide(index) {
+        nextslide=index;
+        slider();
+    }
+    $('#slider #slidernav li').hover(function () {
+        clearInterval(sliderinterval);
+        var index=$(this).index();
+        goslide(index+1);
+
+    },function () {
+
+    })
+
+    $('#slider #next').click(function () {
+        clearInterval(sliderinterval);
+        gonext();
+
+    });
+    $('#slider #prev').click(function () {
+        clearInterval(sliderinterval);
+
+        if (nextslide<1){
+            nextslide=numslides;
+        }
+        nextslide=nextslide-2;
+        goprev();
+    });
+    slider();
+    var sliderinterval=setInterval(slider,timeout);
+    slidertag.mouseleave(function () {
+        clearInterval(sliderinterval);
+        sliderinterval=setInterval(slider,timeout);
+
+    })
+
+
+
+
+
+
+
+</script>
+
+<style>
+    #product_gallery {
+        width: 900px;
+        height: 600px;
+        position: fixed;
+        background: #fff;
+        right: 0;
+        left: 0;
+        margin: auto;
+        top: 10px;
+        z-index: 12;
+        display: none;
+
+    }
+
+    #dark {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        background: rgba(0, 0, 0, .3);
+        top: 0;
+        left: 0;
+        z-index: 10;
+        display: none;
+
+
+    }
+
+    #product_gallery h4 {
+        font-family: yekan;
+        font-size: 13.5pt;
+        padding: 8px;
+        background: #eee;
+        margin: 0;
+        position: relative;
+    }
+
+    #product_gallery h4 .close {
+        width: 28px;
+        height: 28px;
+        background: url(images/slices.png) no-repeat -134px -123px;
+        position: absolute;
+        left: 8px;
+        top: 8px;
+        border: 1px solid #ccc;
+        border-radius: 100%;
+        cursor: pointer;
+    }
+
+    #product_gallery .right {
+        width: 700px;
+        float: right;
+        height: 548px;
+    }
+
+    #product_gallery .right .item {
+        height: 100%;
+    }
+
+    #product_gallery .right img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    #product_gallery .left {
+        border-right: 1px solid #ccc;
+        float: left;
+        height: 548px;
+        width: 197px;
+        overflow-y: auto;
+    }
+
+    #product_gallery .left ul {
+        padding: 0;
+        width: 100%;
+
+    }
+
+    #product_gallery .left li {
+        height: 130px;
+        border-bottom: 1px solid #ccc;
+        text-align: center;
+        cursor: pointer;
+        opacity: .6;
+    }
+
+    #product_gallery .left li.active {
+
+        opacity: 1 !important;
+    }
+
+    #product_gallery .left li img {
+        margin: 0 auto;
+        margin-top: 7px;
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    #product_gallery .right .item {
+        display: none;
+    }
+
+    .icon3d {
+        width: 28px;
+        height: 28px;
+        background: url(images/slices.png) no-repeat -363px -117px;
+        display: block;
+        position: absolute;
+        left: 4px;
+        bottom: 4px;
+
+    }
+    
+
+
+</style>
+
+
+<div id="product_gallery">
+    <h4>
+        samsun galexy xyz
+        <span class="close">
+
+        </span>
+    </h4>
+    <div class="right">
+         <img class="mainimage" src="">
+
+
+    </div>
+    <div class="left ">
+        <ul>
+
+            <li data-main-image="images/products/1/gallery/large/1472662586.jpg">
+                <img src="images/products/1/gallery/small/1472662586.jpg">
+            </li>
+
+
+
+            <li data-main-image="images/products/1/gallery/large/1472662593.jpg" >
+                <img src="images/products/1/gallery/small/1472662593.jpg">
+            </li>
+            <li data-main-image="images/products/1/gallery/large/1472662590.jpg">
+                <img src="images/products/1/gallery/small/1472662590.jpg">
+            </li>
+
+        </ul>
+    </div>
+
+</div>
+
+<div id="dark"></div>
+
+
+
+<script>
+
+
+
+
+
+
+
+var productGallery = $('#product_gallery');
+var productGalleryItems = productGallery.find('.item');
+
+function showGallery(imageUrl, index) {
+
+
+    productGalleryThumbnails.removeClass('active');
+    productGalleryThumbnails.eq(index).addClass('active');
+    if (imageUrl.length > 0) {
+        productGallery.find('.mainimage').attr('src', imageUrl);
+        $('#cv').fadeOut(0);
+        $('.mainimage').fadeIn(100);
+    } else {
+        $('.mainimage').fadeOut(0);
+        $('#cv').fadeIn(100);
+
+    }
+
+}
+
+var productGalleryThumbnails = productGallery.find('.left ul li');
+
+productGalleryThumbnails.click(function () {
+
+    var index = $(this).index();
+    var mainImageUrl = $(this).attr('data-main-image');
+    showGallery(mainImageUrl, index);
+
+});
+
+productGallery.find('.close').click(function () {
+    productGallery.fadeOut(200);
+    $('#dark').fadeOut(200);
+});
+
+$('.gallery ul li').click(function () {
+    $('#dark').fadeIn(200);
+    productGallery.fadeIn(200);
+    var index = $(this).index();
+
+    if (index < 0) {
+        index = 0;
+    }
+    var mainImageUrl = $(this).attr('data-main-image');
+    showGallery(mainImageUrl, index);
+
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
